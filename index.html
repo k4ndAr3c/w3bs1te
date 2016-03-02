@@ -17,7 +17,8 @@ if (computerChoice < 0.34) {
     computerChoice = "paper";
 } else {
     computerChoice = "scissors";
-} console.log("Computer: " + computerChoice);
+}
+document.write("Computer: " + computerChoice);
 
 function compare(choice1, choice2){
     if (choice1 == choice2){
@@ -39,7 +40,7 @@ function compare(choice1, choice2){
             return("rock wins");}
     }
 }
-console.log(compare(userChoice, computerChoice));
+document.write(compare(userChoice, computerChoice));
         </script>
     </body>
 </html>
