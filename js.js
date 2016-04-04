@@ -17,17 +17,17 @@ function compare(choice1, choice2){
         if (choice2 == "scissors"){
             return("id=win>YOU win");}
         else {
-            return("id=loose>HE win");}
+            return("id=loose>HE wins");}
     }else if (choice1 == "paper"){
         if (choice2 == "rock"){
             return("id=win>YOU win");}
         else {
-            return("id=loose>HE win");}
+            return("id=loose>HE wins");}
     }else if (choice1 == "scissors"){
         if (choice2 == "paper"){
             return("id=win>YOU win");}
         else {
-            return("id=loose>HE win");}
+            return("id=loose>HE wins");}
     }
 }
 document.write("<p align=center "+compare(userChoice, computerChoice)+"</p>");
