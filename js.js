@@ -8,7 +8,7 @@ if (computerChoice < 0.34) {
 } else {
     computerChoice = "scissors";
 }
-document.write("<p align=middle>Computer: " + computerChoice + "</p><br />");
+document.write("<div align=middle>Computer: <b id=cchoice>" + computerChoice + "</b></div><br />");
 
 function compare(choice1, choice2){
     if (choice1 == choice2){
