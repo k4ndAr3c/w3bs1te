@@ -1,0 +1,19 @@
+body {
+  background-image: url("blackBG2.jpg");
+  font-family: 'Ubuntu';
+  background-size: cover;
+  color:yellow;
+}
+
+h1 {
+  color: purple;
+}
+
+#win {
+  color: green;
+}
+
+#loose {
+  color: red;
+}
+
