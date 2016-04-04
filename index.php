@@ -15,7 +15,7 @@ $f = fopen ("cons", "a");
 fputs($f, "$ua\t$ip\t$date\n");
 fclose($f);
 ?>
-    <script type="text/javascript" src="js.js"></script>
-
+<div align=center><p>Voici un petit jeu, have fun .!.</p></div>
+<br /><script type="text/javascript" src="js.js"></script>
     </body>
 </html>
