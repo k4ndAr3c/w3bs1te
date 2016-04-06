@@ -81,4 +81,5 @@ function pixel(){
 function bingo(){
 	$("titre").style.color = "red";
 	$("titre").innerHTML = " Goodbye World! ";
+	document.body.style.backgroundImage = "url('blackBG3.jpg')";
 }
