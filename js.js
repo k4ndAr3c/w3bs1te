@@ -32,16 +32,19 @@ function shifumi(){
 	            return("id=win>YOU win");}
 	        else {
 	            return("id=loose>HE wins");}
-	    }else if (choice1 == "Love"){
+	    }else if (choice1 == "love"){
 		artii("Love");
-	    }else if (choice1 == "Evil"){
+	    }else if (choice1 == "evil"){
 		artii("Evil");
-	    }else if (choice1 == "Strange"){
+	    }else if (choice1 == "strange"){
 		strange();
-	    }else if (choice1 == "Claire"){
+	    }else if (choice1 == "maman"){
 		clairemaindor();
+	    }else if (choice1 == "hack"){
+		alert(".:|  Find a piXel  |:.");
+	    }else if (choice1 == "bozendo"){
+		bozendo();
 	    }
-
 
 	}
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+"</p>" ;
@@ -80,6 +83,29 @@ function pixel(){
 }
 function bingo(){
 	$("titre").style.color = "red";
+	$("titre").setAttribute("align", "left");
 	$("titre").innerHTML = " Goodbye World! ";
 	document.body.style.backgroundImage = "url('blackBG3.jpg')";
+}
+function bozendo(){
+	var a = document.createElement('iframe');
+	a.align = "middle";
+	a.width="640" 
+	a.height="360"
+	a.src="https://www.youtube.com/embed/JjaUltnVmWg"
+	a.frameborder="0" 
+	document.body.appendChild(a)[1];
+}
+function shuffle(v){
+    for(var j, x, i = v.length; i; j = parseInt(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
+    return v;
+}
+function shufPhrase(){
+	var phr = ["V","o","i","c","i"," ","u","n"," ","p","e","t","i","t"," ","j","e","u",","," ","h","a","v","e"," ","f","u","n"," ",".","!","."];
+	hpr = shuffle(phr);
+	var strhpr = ""
+	for (var i=0;i<phr.length;i++){
+		strhpr = strhpr+hpr[i];
+	}
+	$("phrase").innerHTML = strhpr;
 }
