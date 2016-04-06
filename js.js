@@ -1,3 +1,6 @@
+var $ = function(id){
+	return document.getElementById(id);
+}
 function shifumi(){
 	var userChoice = prompt("Do you choose rock, paper or scissors?");
 	var computerChoice = Math.random();
@@ -72,4 +75,10 @@ function strange(){
 function clairemaindor(){
 	document.location = "http://www.clairemaindor.fr/";
 }
-
+function pixel(){
+	$("pixel").onmouseover = bingo();
+}
+function bingo(){
+	$("titre").style.color = "red";
+	$("titre").innerHTML = " Goodbye World! ";
+}

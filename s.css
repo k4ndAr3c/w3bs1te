@@ -4,27 +4,33 @@ body {
   background-size: auto;
   color:yellow;
 }
-
 h1 {
   color: green;
 }
-
 #win {
   color: green;
 }
-
 #loose {
   color: red;
 }
 #cchoice {
   color: purple
 }
-
 #shifumiBou {
   color:yellow;
   font: bold small 'trebuchet ms',helvetica,sans-serif;
 } 
-
 #artii {
   color:yellow;
 }
+.trans:hover {
+    transition: all 0.7s;
+    transform: translate3d(-197px,65px,50px) scale3d(3,8,3);
+    border-radius: 80%;
+}
+.rotateImg:hover {
+    perspective: 600px;
+    transform-style: preserve-3d;
+    transition: all 3s;
+    transform: rotate3d(1,1,1,320deg);
+} 
