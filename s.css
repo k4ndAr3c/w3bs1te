@@ -1,7 +1,7 @@
 body {
   background-image: url("blackBG2.jpg");
   font-family: 'Ubuntu';
-  background-size: cover;
+  background-size: auto;
   color:yellow;
 }
 
@@ -21,6 +21,10 @@ h1 {
 }
 
 #shifumiBou {
-   color:yellow;
-   font: bold small 'trebuchet ms',helvetica,sans-serif;
+  color:yellow;
+  font: bold small 'trebuchet ms',helvetica,sans-serif;
 } 
+
+#artii {
+  color:yellow;
+}

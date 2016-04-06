@@ -29,8 +29,40 @@ function shifumi(){
 	            return("id=win>YOU win");}
 	        else {
 	            return("id=loose>HE wins");}
+	    }else if (choice1 == "Love"){
+		artii("Love");
+	    }else if (choice1 == "Evil"){
+		artii("Evil");
 	    }
 	}
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+"</p>" ;
-	return
+	return;
 }
+
+function artii(w){
+	var a = document.createElement('div');
+	var http = new XMLHttpRequest();
+	http.open("GET", w+".artii", true);
+	http.setRequestHeader('Content-type', 'text/plain');
+	http.send();
+	a.align = "right";
+	a.id = "artii";
+	document.body.appendChild(a);
+	alert('Be curious .!.');
+	document.getElementById("artii").innerHTML = "<pre>"+http.responseText+"</pre>";
+	return;
+}
+
+
+
+function sleep(milliseconds) {
+	var start = new Date().getTime();
+	for (var i = 0; i < 1e7; i++) {
+		if ((new Date().getTime() - start) > milliseconds){
+			break;
+		}
+	}
+}
+
+
+
