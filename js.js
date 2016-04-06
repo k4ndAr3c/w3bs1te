@@ -33,7 +33,13 @@ function shifumi(){
 		artii("Love");
 	    }else if (choice1 == "Evil"){
 		artii("Evil");
+	    }else if (choice1 == "Strange"){
+		strange();
+	    }else if (choice1 == "Claire"){
+		clairemaindor();
 	    }
+
+
 	}
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+"</p>" ;
 	return;
@@ -52,9 +58,6 @@ function artii(w){
 	document.getElementById("artii").innerHTML = "<pre>"+http.responseText+"</pre>";
 	return;
 }
-
-
-
 function sleep(milliseconds) {
 	var start = new Date().getTime();
 	for (var i = 0; i < 1e7; i++) {
@@ -63,6 +66,10 @@ function sleep(milliseconds) {
 		}
 	}
 }
-
-
+function strange(){
+	
+}
+function clairemaindor(){
+	document.location = "http://www.clairemaindor.fr/";
+}
 
