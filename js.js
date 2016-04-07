@@ -48,7 +48,10 @@ function shifumi(){
 		fun();
 	    }else if (choice1 == ""){
 	    	vide();
+	    }else if (choice1 == "madnana"){
+	    	madnana();
 	    }
+
 
 
 
@@ -100,7 +103,7 @@ function bozendo(){
 	a.height="360"
 	a.src="https://www.youtube.com/embed/JjaUltnVmWg"
 	a.frameborder="0" 
-	document.body.appendChild(a)[1];
+	document.body.appendChild(a)[0];
 };
 function shuffle(v){
     for(var j, x, i = v.length; i; j = parseInt(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
@@ -134,4 +137,14 @@ function fun(){
 };
 function deshuf(){
 	$("phrase").innerHTML = "Voici un petit jeu, have fun .!.";
-}
+};
+function madnana(){
+	var h = document.createElement('img');
+	h.src="Heart_Beating.gif";
+	h.id = "heart";
+	h.setAttribute("data-animation",  "coeur");
+	h.setAttribute("align", "right");
+	document.body.appendChild(h);
+	$("heart").className= "rotateImg";
+	$("heart").style.webkitAnimationPlayState = "running";
+};

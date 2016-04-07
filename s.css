@@ -28,12 +28,22 @@ h1 {
   transform: translate3d(-197px,65px,50px) scale3d(3,8,3);
   border-radius: 80%;
 }
-.rotateImg:hover {
+.rotateImg {
+  animation-name: coeur;
   perspective: 600px;
-  transform-style: preserve-3d;
-  transition: all 3s;
-  transform: rotate3d(1,1,1,320deg);
+  animation-duration: 8s;
+  animation-delay: 1s;
+  transition:all 8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 } 
+@keyframes coeur{
+  from{
+    transform: translate(0px,0px) scale3d(1,1,1) transform: rotate3d(1,1,1,0deg);
+  }to{
+    transform: translate(-167px,-65px) scale3d(3,1,5) rotate3d(1,1,1,220deg);
+  }
+}
 .logo {
   margin:.25em;
   font-size:1.5em;
@@ -57,4 +67,6 @@ h1 {
 }
 #fun {
   
+}
+#heart{
 }
