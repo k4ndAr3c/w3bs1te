@@ -132,4 +132,6 @@ function fun(){
 	req.send();
 	req.onerror = function(){$("results").innerHTML = "<p align='center' style='font-family:Courier; color:#990012'><b> [-] Err0r in G3T .. </b></p>";}
 };
-
+function deshuf(){
+	$("phrase").innerHTML = "Voici un petit jeu, have fun .!.";
+}
