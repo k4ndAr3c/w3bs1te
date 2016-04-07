@@ -33,9 +33,9 @@ function shifumi(){
 	        else {
 	            return("id=loose>HE wins");}
 	    }else if (choice1 == "love"){
-		artii("Love");
-	    }else if (choice1 == "evil"){
 		artii("Evil");
+	    }else if (choice1 == "evil"){
+		artii("Love");
 	    }else if (choice1 == "strange"){
 		strange();
 	    }else if (choice1 == "maman"){
