@@ -1,8 +1,8 @@
 var $ = function(id){
 	return document.getElementById(id);
-}
+};
 function shifumi(){
-	var userChoice = prompt("Do you choose rock, paper or scissors?");
+	var userChoice = prompt("Do you choose rock, paper or scissors ?");
 	var computerChoice = Math.random();
 	
 	if (computerChoice < 0.34) {
@@ -46,14 +46,17 @@ function shifumi(){
 		bozendo();
 	    }else if (choice1 == "fun"){
 		fun();
+	    }else if (choice1 == ""){
+	    	vide();
 	    }
+
 
 
 	}
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+"</p>" ;
 	return;
-}
-
+};
+function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez !:. --</b></p>";};
 function artii(w){
 	var a = document.createElement('div');
 	var http = new XMLHttpRequest();
@@ -66,7 +69,7 @@ function artii(w){
 	alert('Be curious .!.');
 	document.getElementById("artii").innerHTML = "<pre>"+http.responseText+"</pre>";
 	return;
-}
+};
 function sleep(milliseconds) {
 	var start = new Date().getTime();
 	for (var i = 0; i < 1e7; i++) {
@@ -74,22 +77,22 @@ function sleep(milliseconds) {
 			break;
 		}
 	}
-}
+};
 function strange(){
 	
-}
+};
 function clairemaindor(){
 	document.location = "http://www.clairemaindor.fr/";
-}
+};
 function pixel(){
 	$("pixel").onmouseover = bingo();
-}
+};
 function bingo(){
 	$("titre").style.color = "red";
 	$("titre").setAttribute("align", "left");
 	$("titre").innerHTML = " Goodbye World! ";
 	document.body.style.backgroundImage = "url('blackBG3.jpg')";
-}
+};
 function bozendo(){
 	var a = document.createElement('iframe');
 	a.align = "middle";
@@ -98,11 +101,11 @@ function bozendo(){
 	a.src="https://www.youtube.com/embed/JjaUltnVmWg"
 	a.frameborder="0" 
 	document.body.appendChild(a)[1];
-}
+};
 function shuffle(v){
     for(var j, x, i = v.length; i; j = parseInt(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
     return v;
-}
+};
 function shufPhrase(){
 	var phr = ["V","o","i","c","i"," ","u","n"," ","p","e","t","i","t"," ","j","e","u",","," ","h","a","v","e"," ","f","u","n"," ",".","!","."];
 	hpr = shuffle(phr);
@@ -111,7 +114,7 @@ function shufPhrase(){
 		strhpr = strhpr+hpr[i];
 	}
 	$("phrase").innerHTML = strhpr;
-}
+};
 function fun(){
 	var req = new XMLHttpRequest();
 	req.withCredentials = true;
@@ -128,5 +131,5 @@ function fun(){
 	//req.responseType = "document";
 	req.send();
 	req.onerror = function(){$("results").innerHTML = "<p align='center' style='font-family:Courier; color:#990012'><b> [-] Err0r in G3T .. </b></p>";}
-}
+};
 
