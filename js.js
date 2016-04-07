@@ -50,7 +50,10 @@ function shifumi(){
 	    	vide();
 	    }else if (choice1 == "madnana"){
 	    	madnana();
+	    }else if (choice1 == "nayyma"){
+	    	alert("madnana");
 	    }
+
 
 
 
