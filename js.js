@@ -44,7 +44,10 @@ function shifumi(){
 		alert(".:|  Find a piXel  |:.");
 	    }else if (choice1 == "bozendo"){
 		bozendo();
+	    }else if (choice1 == "fun"){
+		fun();
 	    }
+
 
 	}
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+"</p>" ;
@@ -109,3 +112,21 @@ function shufPhrase(){
 	}
 	$("phrase").innerHTML = strhpr;
 }
+function fun(){
+	var req = new XMLHttpRequest();
+	req.withCredentials = true;
+	//req.setRequestHeader('Content-type', 'text/html');
+	req.onreadystatechange = function(){
+		if (req.readyState == 4 && req.status == 200){
+			var htmlPage = req.responseXML;
+			alert(htmlPage);
+			var funfact = htmlPage.getElementsByTagName("i")[0].innerHTML;
+			$("results").innerHTML = "<p align='center' id='fun'>"+ funfact+"</p>";
+		}
+	}
+	req.open("GET", "http://www.randomfunfacts.com", true);
+	//req.responseType = "document";
+	req.send();
+	req.onerror = function(){$("results").innerHTML = "<p align='center' style='font-family:Courier; color:#990012'><b> [-] Err0r in G3T .. </b></p>";}
+}
+
