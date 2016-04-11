@@ -9,11 +9,11 @@ h1 {
 }
 #win {
   color: green;
-  font-size: 23px;
+  font-size: 26px;
 }
 #loose {
   color: red;
-  font-size: 23px;
+  font-size: 26px;
 }
 #cchoice {
   color: purple
