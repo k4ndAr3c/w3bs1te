@@ -1,3 +1,11 @@
+var req = false;
+if (window.XMLHttpRequest){
+	req = new XMLHttpRequest();
+}else if (window.ActiveXtargetElementect){
+	req = new ActiveXtargetElementect("Microsoft.XMLHTTP");
+};
+var scorec = 0
+var scoreh = 0
 var $ = function(id){
 	return document.getElementById(id);
 };
@@ -19,18 +27,24 @@ function shifumi(){
 	        return(">The result is a tie!");
 	    }else if (choice1 == "rock"){
 	        if (choice2 == "scissors"){
+		    scoreh += 1;
 	            return("id=win>YOU win");}
 	        else {
+		    scorec += 1;
 	            return("id=loose>HE wins");}
 	    }else if (choice1 == "paper"){
 	        if (choice2 == "rock"){
+		    scoreh += 1;
 	            return("id=win>YOU win");}
 	        else {
+		    scorec += 1;
 	            return("id=loose>HE wins");}
 	    }else if (choice1 == "scissors"){
 	        if (choice2 == "paper"){
+		    scoreh += 1;
 	            return("id=win>YOU win");}
 	        else {
+		    scorec += 1;
 	            return("id=loose>HE wins");}
 	    }else if (choice1 == "love"){
 		artii("Evil");
@@ -41,7 +55,7 @@ function shifumi(){
 	    }else if (choice1 == "maman"){
 		clairemaindor();
 	    }else if (choice1 == "hack"){
-		alert(".:|  Find a piXel  |:.");
+		writeResult(".:|  Find a piXel  |:.");
 	    }else if (choice1 == "bozendo"){
 		bozendo();
 	    }else if (choice1 == "fun"){
@@ -51,7 +65,7 @@ function shifumi(){
 	    }else if (choice1 == "madnana"){
 	    	madnana();
 	    }else if (choice1 == "nayyma"){
-	    	alert("madnana");
+	    	writeResult("madnana");
 	    }
 
 
@@ -60,20 +74,22 @@ function shifumi(){
 
 	}
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+"</p>" ;
+	$("score").innerHTML = "<font color=green>V="+scoreh+"</font> / <font color=red>D= "+scorec+" </font>";
+	indice();
 	return;
 };
 function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez !:. --</b></p>";};
 function artii(w){
 	var a = document.createElement('div');
-	var http = new XMLHttpRequest();
-	http.open("GET", w+".artii", true);
-	http.setRequestHeader('Content-type', 'text/plain');
-	http.send();
+	//var http = new XMLHttpRequest();
+	req.open("GET", w+".artii", true);
+	req.setRequestHeader('Content-type', 'text/plain');
+	req.send();
 	a.align = "right";
 	a.id = "artii";
 	document.body.appendChild(a);
 	alert('Be curious .!.');
-	document.getElementById("artii").innerHTML = "<pre>"+http.responseText+"</pre>";
+	document.getElementById("artii").innerHTML = "<pre><code>"+req.responseText+"</code></pre>";
 	return;
 };
 function sleep(milliseconds) {
@@ -128,7 +144,7 @@ function fun(){
 	req.onreadystatechange = function(){
 		if (req.readyState == 4 && req.status == 200){
 			var htmlPage = req.responseXML;
-			alert(htmlPage);
+			//alert(htmlPage);
 			var funfact = htmlPage.getElementsByTagName("i")[0].innerHTML;
 			$("results").innerHTML = "<p align='center' id='fun'>"+ funfact+"</p>";
 		}
@@ -150,4 +166,10 @@ function madnana(){
 	document.body.appendChild(h);
 	$("heart").className= "rotateImg";
 	$("heart").style.webkitAnimationPlayState = "running";
+};
+function writeResult(res){
+	$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>"+res+"</b></p>";
+};
+function indice(){
+	if (scoreh == 3){writeResult("Clue/indice : some functions can be trigger by keywords / certaines fonctions se déclenchent par mots-clés")};
 };
