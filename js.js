@@ -50,6 +50,12 @@ function shifumi(){
 	        else {
 		    scorec += 1;
 	            return("id=loose>[-] HE wins");}
+
+//#########################################################################
+//#   Ci-dessous: les différents mots-clef;                               #
+//#		Just below: different keywords;                           #
+//#########################################################################
+
 	    }else if (choice1 == "love"){
 		artii("Evil");
 		scoreh += 1;
