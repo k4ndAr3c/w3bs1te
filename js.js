@@ -85,6 +85,7 @@ function shifumi(){
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+"</p>" ;
 	$("score").innerHTML = "<font color=green>V="+scoreh+"</font> / <font color=red>D= "+scorec+" </font>";
 	indice();
+	deshuf();
 	return;
 };
 function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez !:. --</b></p>";};
@@ -148,6 +149,7 @@ function shufPhrase(){
 function fun(){
 	//req.withCredentials = true;
 	//req.setRequestHeader('Content-type', 'text/html');
+	req.overrideMimeType("text/xml");
 	req.onreadystatechange = function(){
 		if (req.readyState == 4 && req.status == 200){
 			var htmlPage = req.responseXML;
