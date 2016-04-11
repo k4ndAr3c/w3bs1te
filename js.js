@@ -79,8 +79,8 @@ function shifumi(){
 	    }else if (choice1 == "nayyma"){
 	    	writeResult("madnana");
 		scoreh += 1;
-	    }else if (choice1 == "date"){
-	    	date();
+	    }else if (choice1 == "gratte"){
+	    	gratte();
 		scoreh += 1;
 	    }
 
@@ -195,12 +195,14 @@ window.onload = function logs(){
 	req.open("GET", phpLogs);
 	req.send();
 };
-function date(){
+window.onload = function date(){
 	//req.overrideMimeType("text/xml");
-	req.open("GET", "date.php");
+	req.open("GET", "http://www.clairemaindor.fr/date.php");
+	req.onreadystatechange = function() {
+		if(req.readyState == 4 && req.status == 200) {
+			var res = req.responseText;
+			$("date").innerHTML = res;
+		};
+	};
 	req.send();
-	var res = req.responseText;
-	alert(res);
-	var date = res.getElementById("date").innerHTML;
-	writeResult(date);
 };
