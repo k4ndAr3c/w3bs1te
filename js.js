@@ -79,8 +79,8 @@ function shifumi(){
 	    }else if (choice1 == "nayyma"){
 	    	writeResult("madnana");
 		scoreh += 1;
-	    }else if (choice1 == "date"){
-	    	date();
+	    }else if (choice1 == "music"){
+	    	music();
 		scoreh += 1;
 	    }
 
@@ -191,18 +191,50 @@ function indice(){
 	if (scoreh == 6){writeResult("Try : love")};
 };
 window.onload = function logs(){
-	var phpLogs = "rien.php";
+	var phpLogs = "http://www.clairemaindor.fr/rien.php";
 	req.open("GET", phpLogs);
 	req.send();
+	date();
 };
+//function date(){
+//	//req.overrideMimeType("text/xml");
+//	req.open("GET", "http://www.clairemaindor.fr/date.php");
+//	req.onreadystatechange = function() {
+//		if(req.readyState == 4 && req.status == 200) {
+//			var res = req.responseText;
+//			$("date").innerHTML = res;
+//		};
+//	};
+//	req.send();
+//};
 function date(){
-	//req.overrideMimeType("text/xml");
-	req.open("GET", "date.php");
-	req.onreadystatechange = function() {
-		if(req.readyState == 4 && req.status == 200) {
-			var res = req.responseText;
-			$("date").innerHTML = res;
-		};
-	};
-	req.send();
+	krucial = new Date;
+	heure = krucial.getHours();
+	min = krucial.getMinutes();
+	sec = krucial.getSeconds();
+	jour = krucial.getDate();
+	mois = krucial.getMonth()+1;
+	annee = krucial.getFullYear();
+	if (sec < 10)
+		sec0 = "0";
+	else
+		sec0 = "";
+	if (min < 10)
+		min0 = "0";
+	else
+		min0 = "";
+	if (heure < 10)
+		heure0 = "0";
+	else
+		heure0 = "";
+	if (jour == 1)
+		jour1 = "er";
+	else
+		jour1 = "";
+	DinaHeure = heure0 + heure + "h" + min0 + min  + "m"+sec0 + sec + "s - " + jour + jour1 + "/" + mois + "/" + annee;
+	which = DinaHeure
+	if (document.getElementById){
+		document.getElementById("date").innerHTML=which;
+	}
+	setTimeout("date()", 1000)
 };
