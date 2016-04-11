@@ -9,9 +9,11 @@ h1 {
 }
 #win {
   color: green;
+  font-size: 23px;
 }
 #loose {
   color: red;
+  font-size: 23px;
 }
 #cchoice {
   color: purple
@@ -70,4 +72,8 @@ h1 {
   
 }
 #heart{
+}
+#imgRes{
+  height: 75px;
+  width: 75px;
 }

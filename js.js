@@ -20,7 +20,7 @@ function shifumi(){
 	} else {
 	    computerChoice = "scissors";
 	}
-	document.getElementById("choice").innerHTML = "<div align=middle>Computer: <b id=cchoice>" + computerChoice + "</b></div><br />";
+	document.getElementById("choice").innerHTML = "<div align=middle>Computer: <img id='imgRes'src="+computerChoice+".png /><i id=cchoice>("+computerChoice+")</i></div><br />";
 	
 	function compare(choice1, choice2){
 	    if (choice1 == choice2){
