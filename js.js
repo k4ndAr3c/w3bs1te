@@ -100,13 +100,16 @@ function artii(w){
 	var a = document.createElement('div');
 	req.open("GET", w+".artii", true);
 	req.setRequestHeader('Content-type', 'text/plain');
+	req.onreadystatechange = function() {
+		if(req.readyState == 4 && req.status == 200) {
+			a.align = "right";
+		        a.id = "artii";
+        		document.body.appendChild(a);
+        		writeResult('Be curious .!.');
+        		document.getElementById("artii").innerHTML = "<pre><code>"+req.responseText+"</code></pre>";
+		};
+	};
 	req.send();
-	a.align = "right";
-	a.id = "artii";
-	document.body.appendChild(a);
-	alert('Be curious .!.');
-	document.getElementById("artii").innerHTML = "<pre><code>"+req.responseText+"</code></pre>";
-	return;
 };
 function sleep(milliseconds) {
 	var start = new Date().getTime();
