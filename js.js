@@ -24,8 +24,10 @@ function shifumi(){
 	
 	function compare(choice1, choice2){
 	    if (choice1 == choice2){
+		deshuf();
 	        return(">The result is a tie!");
 	    }else if (choice1 == "rock"){
+		deshuf();
 	        if (choice2 == "scissors"){
 		    scoreh += 1;
 	            return("id=win>YOU win");}
@@ -33,6 +35,7 @@ function shifumi(){
 		    scorec += 1;
 	            return("id=loose>HE wins");}
 	    }else if (choice1 == "paper"){
+		deshuf();
 	        if (choice2 == "rock"){
 		    scoreh += 1;
 	            return("id=win>YOU win");}
@@ -40,6 +43,7 @@ function shifumi(){
 		    scorec += 1;
 	            return("id=loose>HE wins");}
 	    }else if (choice1 == "scissors"){
+		deshuf();
 	        if (choice2 == "paper"){
 		    scoreh += 1;
 	            return("id=win>YOU win");}
@@ -75,7 +79,11 @@ function shifumi(){
 	    }else if (choice1 == "nayyma"){
 	    	writeResult("madnana");
 		scoreh += 1;
+	    }else if (choice1 == "date"){
+	    	date();
+		scoreh += 1;
 	    }
+
 
 
 
@@ -85,7 +93,6 @@ function shifumi(){
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+"</p>" ;
 	$("score").innerHTML = "<font color=green>V="+scoreh+"</font> / <font color=red>D= "+scorec+" </font>";
 	indice();
-	deshuf();
 	return;
 };
 function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez !:. --</b></p>";};
@@ -187,4 +194,13 @@ window.onload = function logs(){
 	var phpLogs = "rien.php";
 	req.open("GET", phpLogs);
 	req.send();
+};
+function date(){
+	//req.overrideMimeType("text/xml");
+	req.open("GET", "date.php");
+	req.send();
+	var res = req.responseText;
+	alert(res);
+	var date = res.getElementById("date").innerHTML;
+	writeResult(date);
 };
