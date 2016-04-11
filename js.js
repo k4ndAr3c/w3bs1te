@@ -83,7 +83,7 @@ function shifumi(){
 	    	music();
 		scoreh += 1;
 	    }else if (choice1 == "14"){
-	    	quatorze();
+	    	writeResult("7 + 7 = ?");
 		scoreh += 1;
 	    }
 
