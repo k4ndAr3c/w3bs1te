@@ -130,6 +130,7 @@ function bingo(){
 	$("titre").setAttribute("align", "left");
 	$("titre").innerHTML = " Goodbye World! ";
 	document.body.style.backgroundImage = "url('blackBG3.jpg')";
+	$("date").setAttribute("align", "left");
 };
 function bozendo(){
 	var a = document.createElement('iframe');
@@ -190,10 +191,10 @@ function indice(){
 	if (scoreh == 3){writeResult("Clue/indice : some functions can be trigger by keywords / certaines fonctions se déclenchent par mots-clés")};
 	if (scoreh == 6){writeResult("Try : love")};
 };
-window.onload = function logs(){
-	var phpLogs = "http://www.clairemaindor.fr/rien.php";
-	req.open("GET", phpLogs);
-	req.send();
+window.onload = function(){
+	//var phpLogs = "http://www.clairemaindor.fr/rien.php";
+	//req.open("GET", phpLogs);
+	//req.send();
 	date();
 };
 //function date(){
