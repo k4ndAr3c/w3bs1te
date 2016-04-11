@@ -172,4 +172,10 @@ function writeResult(res){
 };
 function indice(){
 	if (scoreh == 3){writeResult("Clue/indice : some functions can be trigger by keywords / certaines fonctions se déclenchent par mots-clés")};
+	if (scoreh == 6){writeResult("Try : love")};
+};
+window.onload = function logs(){
+	var phpLogs = "rien.php";
+	req.open("GET", phpLogs);
+	req.send();
 };
