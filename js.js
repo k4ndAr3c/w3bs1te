@@ -20,36 +20,36 @@ function shifumi(){
 	} else {
 	    computerChoice = "scissors";
 	}
-	document.getElementById("choice").innerHTML = "<div align=middle><font color=green><i>("+userChoice+") </i></font><img id='imgRes' src="+userChoice+".png /><b> VS </b>computer: <img id='imgRes' src="+computerChoice+".png /><i id=cchoice>("+computerChoice+")</i></div><br />";
+	document.getElementById("choice").innerHTML = "<div align=middle><font color=green><i>("+userChoice+") </i></font><img alt='Try Again .!.' id='imgRes' src="+userChoice+".png /><font size=6px><b> VS </b></font>computer: <img id='imgRes' src="+computerChoice+".png /><i id=cchoice>("+computerChoice+")</i></div><br />";
 	
 	function compare(choice1, choice2){
 	    if (choice1 == choice2){
 		deshuf();
-	        return(">The result is a tie!");
+	        return(">The result is a tie");
 	    }else if (choice1 == "rock"){
 		deshuf();
 	        if (choice2 == "scissors"){
 		    scoreh += 1;
-	            return("id=win>YOU win");}
+	            return("id=win>[+] YOU win");}
 	        else {
 		    scorec += 1;
-	            return("id=loose>HE wins");}
+	            return("id=loose>[-] HE wins");}
 	    }else if (choice1 == "paper"){
 		deshuf();
 	        if (choice2 == "rock"){
 		    scoreh += 1;
-	            return("id=win>YOU win");}
+	            return("id=win>[+] YOU win");}
 	        else {
 		    scorec += 1;
-	            return("id=loose>HE wins");}
+	            return("id=loose>[-] HE wins");}
 	    }else if (choice1 == "scissors"){
 		deshuf();
 	        if (choice2 == "paper"){
 		    scoreh += 1;
-	            return("id=win>YOU win");}
+	            return("id=win>[+] YOU win");}
 	        else {
 		    scorec += 1;
-	            return("id=loose>HE wins");}
+	            return("id=loose>[-] HE wins");}
 	    }else if (choice1 == "love"){
 		artii("Evil");
 		scoreh += 1;
@@ -90,8 +90,8 @@ function shifumi(){
 
 
 	}
-	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+"</p>" ;
-	$("score").innerHTML = "<font color=green>V="+scoreh+"</font> / <font color=red>D= "+scorec+" </font>";
+	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+" |:.</p>" ;
+	$("score").innerHTML = "<font color=green>V= "+scoreh+"</font> / <font color=red>D= "+scorec+" </font>";
 	indice();
 	return;
 };
