@@ -48,24 +48,33 @@ function shifumi(){
 	            return("id=loose>HE wins");}
 	    }else if (choice1 == "love"){
 		artii("Evil");
+		scoreh += 1;
 	    }else if (choice1 == "evil"){
 		artii("Love");
+		scoreh += 1;
 	    }else if (choice1 == "strange"){
 		strange();
+		scoreh += 1;
 	    }else if (choice1 == "maman"){
 		clairemaindor();
+		scoreh += 1;
 	    }else if (choice1 == "hack"){
 		writeResult(".:|  Find a piXel  |:.");
+		scoreh += 1;
 	    }else if (choice1 == "bozendo"){
 		bozendo();
+		scoreh += 1;
 	    }else if (choice1 == "fun"){
 		fun();
+		scoreh += 1;
 	    }else if (choice1 == ""){
 	    	vide();
 	    }else if (choice1 == "madnana"){
 	    	madnana();
+		scoreh += 1;
 	    }else if (choice1 == "nayyma"){
 	    	writeResult("madnana");
+		scoreh += 1;
 	    }
 
 
@@ -81,7 +90,6 @@ function shifumi(){
 function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez !:. --</b></p>";};
 function artii(w){
 	var a = document.createElement('div');
-	//var http = new XMLHttpRequest();
 	req.open("GET", w+".artii", true);
 	req.setRequestHeader('Content-type', 'text/plain');
 	req.send();
@@ -138,8 +146,7 @@ function shufPhrase(){
 	$("phrase").innerHTML = strhpr;
 };
 function fun(){
-	var req = new XMLHttpRequest();
-	req.withCredentials = true;
+	//req.withCredentials = true;
 	//req.setRequestHeader('Content-type', 'text/html');
 	req.onreadystatechange = function(){
 		if (req.readyState == 4 && req.status == 200){
