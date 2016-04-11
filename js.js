@@ -82,7 +82,11 @@ function shifumi(){
 	    }else if (choice1 == "music"){
 	    	music();
 		scoreh += 1;
+	    }else if (choice1 == "14"){
+	    	quatorze();
+		scoreh += 1;
 	    }
+
 
 
 
@@ -97,6 +101,8 @@ function shifumi(){
 };
 function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez !:. --</b></p>";};
 function artii(w){
+	cleandiv("scode");
+	cleandiv("heart");
 	var a = document.createElement('div');
 	req.open("GET", w+".artii", true);
 	req.setRequestHeader('Content-type', 'text/plain');
@@ -178,6 +184,8 @@ function deshuf(){
 	$("phrase").innerHTML = "Voici un petit jeu, have fun .!.";
 };
 function madnana(){
+	cleandiv("artii");
+	cleandiv("scode");
 	var h = document.createElement('img');
 	h.src="Heart_Beating.gif";
 	h.id = "heart";
@@ -193,6 +201,7 @@ function writeResult(res){
 function indice(){
 	if (scoreh == 3){writeResult("Clue/indice : some functions can be trigger by keywords / certaines fonctions se déclenchent par mots-clés")};
 	if (scoreh == 6){writeResult("Try : love")};
+	if (scoreh == 14){quatorze()};
 };
 window.onload = function(){
 	//var phpLogs = "http://www.clairemaindor.fr/rien.php";
@@ -231,14 +240,34 @@ function date(){
 		heure0 = "0";
 	else
 		heure0 = "";
-	if (jour == 1)
-		jour1 = "er";
-	else
-		jour1 = "";
-	DinaHeure = heure0 + heure + "h" + min0 + min  + "m"+sec0 + sec + "s - " + jour + jour1 + "/" + mois + "/" + annee;
+	DinaHeure = heure0 + heure + "h" + min0 + min  + "m"+sec0 + sec + "s - " + jour + "/" + mois + "/" + annee;
 	which = DinaHeure
 	if (document.getElementById){
 		document.getElementById("date").innerHTML=which;
 	}
 	setTimeout("date()", 1000)
 };
+function music(){
+
+};
+function quatorze(){
+	cleandiv("artii");
+	cleandiv("heart");
+        var a = document.createElement('div');
+        req.open("GET", "js.js", true);
+        req.setRequestHeader('Content-type', 'text/plain');
+        req.onreadystatechange = function() {
+                if(req.readyState == 4 && req.status == 200) {
+                        a.align = "center";
+                        a.id = "scode";
+                        document.body.appendChild(a);
+			writeResult("[+] WiNNeR !");
+                        document.getElementById("scode").innerHTML = "<pre><code>"+req.responseText+"</code></pre>";
+                };
+        };
+        req.send();
+};
+function cleandiv(id){
+	if (olddiv = document.getElementById(id)){
+	document.body.removeChild(olddiv);
+}};
