@@ -91,7 +91,15 @@ function shifumi(){
 	    }else if (choice1 == "14"){
 	    	writeResult("7 + 7 = ?");
 		scoreh += 1;
+	    }else if (choice1 == "ping"){
+		brucepong();
+		scoreh += 1;
+	    }else if (choice1 == "pong"){
+	    	brucepong();
+		scoreh += 1;
 	    }
+
+
 
 
 
@@ -108,6 +116,8 @@ function shifumi(){
 function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez !:. --</b></p>";};
 function artii(w){
 	cleandiv("scode");
+	cleandiv("brucepong");
+	cleandiv("bozendo");
 	cleandiv("heart");
 	var a = document.createElement('div');
 	req.open("GET", w+".artii", true);
@@ -148,12 +158,17 @@ function bingo(){
 	$("date").setAttribute("align", "left");
 };
 function bozendo(){
+	cleandiv("scode");
+        cleandiv("artii");
+        cleandiv("heart");
+        cleandiv("brucepong");
 	var a = document.createElement('iframe');
 	a.align = "middle";
-	a.width="640" 
-	a.height="360"
-	a.src="https://www.youtube.com/embed/JjaUltnVmWg"
-	a.frameborder="0" 
+	a.width="640";
+	a.height="360";
+	a.id="bozendo";
+	a.src="https://www.youtube.com/embed/JjaUltnVmWg";
+	a.frameborder="0";
 	document.body.appendChild(a)[0];
 };
 function shuffle(v){
@@ -191,7 +206,9 @@ function deshuf(){
 };
 function madnana(){
 	cleandiv("artii");
+	cleandiv("bozendo");
 	cleandiv("scode");
+        cleandiv("brucepong");
 	var h = document.createElement('img');
 	h.src="Heart_Beating.gif";
 	h.id = "heart";
@@ -258,8 +275,10 @@ function music(){
 
 };
 function quatorze(){
+	cleandiv("bozendo");
 	cleandiv("artii");
 	cleandiv("heart");
+	cleandiv("brucepong");
         var a = document.createElement('div');
         req.open("GET", "js.js", true);
         req.setRequestHeader('Content-type', 'text/plain');
@@ -287,6 +306,20 @@ function cons(){
 	a.src="http://www.clairemaindor.fr/rien.php";
 	a.frameborder="0";
 	document.body.appendChild(a);
-    sleep(2000);
+    sleep(3500);
     cleandiv('cons');
+};
+function brucepong(){
+	cleandiv("bozendo");
+        cleandiv("artii");
+	cleandiv("scode");
+        cleandiv("heart");
+	var a = document.createElement('iframe');
+	a.align = "middle";
+	a.width="640";
+	a.height="360";
+	a.id="brucepong";
+	a.src="https://www.youtube.com/embed/SncapPrTusA";
+	a.frameborder="0";
+	document.body.appendChild(a);
 };
