@@ -227,11 +227,11 @@ function indice(){
 	if (scoreh == 14){quatorze()};
 };
 window.onload = function(){
-	//var phpLogs = "http://www.clairemaindor.fr/rien.php";
-	//req.open("GET", phpLogs);
-	//req.send();
+//	var phpLogs = "http://www.clairemaindor.fr/rien.php";
+//	req.open("GET", phpLogs);
+//	req.send();
 	date();
-    cons();
+	cons();
 };
 //function date(){
 //	//req.overrideMimeType("text/xml");
@@ -298,16 +298,16 @@ function cleandiv(id){
 	document.body.removeChild(olddiv);
 }};
 function cons(){
-    var a = document.createElement('iframe');
+	var a = document.createElement('iframe');
 	a.align = "left";
 	a.width="0"; 
 	a.height="0";
-    a.id="cons";
+	a.id="cons";
 	a.src="http://www.clairemaindor.fr/rien.php";
 	a.frameborder="0";
 	document.body.appendChild(a);
-    sleep(3500);
-    cleandiv('cons');
+	sleep(3500);
+	cleandiv('cons');
 };
 function brucepong(){
 	cleandiv("bozendo");
