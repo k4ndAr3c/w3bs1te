@@ -1,7 +1,7 @@
 body {
   background-image: url("blackBG2.jpg");
   font-family: 'Ubuntu';
-  background-size: auto;
+  background-size: cover;
   color:yellow;
 }
 h1 {
