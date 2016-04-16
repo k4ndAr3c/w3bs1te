@@ -10,6 +10,7 @@ var $ = function(id){
 	return document.getElementById(id);
 };
 function shifumi(){
+	cleandiv('cons');
 	var userChoice = prompt("Do you choose rock, paper or scissors ?");
 	var computerChoice = Math.random();
 	
@@ -96,6 +97,9 @@ function shifumi(){
 		scoreh += 1;
 	    }else if (choice1 == "pong"){
 	    	brucepong();
+		scoreh += 1;
+	    }else if (choice1 == "musique"){
+	    	music();
 		scoreh += 1;
 	    }
 
@@ -271,8 +275,26 @@ function date(){
 	}
 	setTimeout("date()", 1000)
 };
+//function displayList(id){
+//	var listValue = $(id).value;
+//	$(listValue).style.visibility = "visible";
+//}
 function music(){
-
+	cleandiv("bozendo");
+        cleandiv("artii");
+        cleandiv("scode");
+        cleandiv("heart");
+        var a = document.createElement('div');
+        a.id="music";
+	a.setAttribute("align", "center");
+        document.body.appendChild(a);
+	sleep("500");
+	$("music").innerHTML = "<select name='musique' id='musique' size='1'><option value='-'>-</option><option value='metal'>MeTaL</option><option value='rap'>RaP</option><option value='dub'>DuB</option><option value='jazz'>JaZz</option><option value='elec'>ElEcTrO</option></select><select name='metal' id='metal' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select><select name='rap' id='rap' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select><select name='dub' id='dub' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select><select name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select><select name='elec' id='elec' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select>"
+	sleep("500");
+	$("musique").onchange = function displayList(){
+        var listValue = $("musique").value;
+        $(listValue).style.visibility = "visible";
+		};
 };
 function quatorze(){
 	cleandiv("bozendo");
@@ -306,8 +328,8 @@ function cons(){
 	a.src="http://www.clairemaindor.fr/rien.php";
 	a.frameborder="0";
 	document.body.appendChild(a);
-	sleep(3500);
-	cleandiv('cons');
+	//sleep(13500);
+	//cleandiv('cons');
 };
 function brucepong(){
 	cleandiv("bozendo");
