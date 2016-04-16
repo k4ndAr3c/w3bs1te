@@ -18,7 +18,7 @@ h1 {
 #cchoice {
   color: purple
 }
-#shifumiBou {
+.shifumiBou {
   color:yellow;
   font: bold small 'trebuchet ms',helvetica,sans-serif;
   background: black;
@@ -91,4 +91,7 @@ h1 {
 }
 #elec{
   visibility: hidden;
+}
+#music2{
+  margin-left: 287px;
 }
