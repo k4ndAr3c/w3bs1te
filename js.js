@@ -319,16 +319,14 @@ function start(aut){
 	songval = document.forms.artiste.artist.value;
 	document.forms.artiste.check.checked = false;
 	s.id="player";
-	s.class="shifumiBou";
 	s.type="audio/mp3";
 	s.src = "http://www.clairemaindor.fr/z1c/"+aut+songval+".mp3";
 	document.body.appendChild(s);
 	cplayer = document.createElement("div");
         cplayer.id="cplayer";
-	s.class="shifumiBou";
 	document.body.appendChild(cplayer);
 	sleep(200);
-	$("cplayer").innerHTML = "<button onclick=document.getElementById('player').play()>PlAy</button><button onclick=document.getElementById('player').pause()>PaUsE</button><button onclick=document.getElementById('player').volume+=1>Vol Up</button><button onclick=document.getElementById('player').volume-=1>Vol Down</button>"
+	$("cplayer").innerHTML = "<button class='shifumiBou' onclick=document.getElementById('player').play()>PlAy</button><button class='shifumiBou' onclick=document.getElementById('player').pause()>PaUsE</button><button class='shifumiBou' onclick=document.getElementById('player').volume+=1>Vol Up</button><button class='shifumiBou' onclick=document.getElementById('player').volume-=1>Vol Down</button>"
 };
 function quatorze(){
 	cleandiv("bozendo");
