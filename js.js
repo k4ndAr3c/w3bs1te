@@ -330,7 +330,7 @@ function start(aut){
 	document.body.appendChild(cplayer);
 	sleep(200);
 	document.getElementById('player').play();
-	$("cplayer").innerHTML = "<button class='shifumiBou' onclick=document.getElementById('player').play()>PlAy</button><button class='shifumiBou' onclick=document.getElementById('player').pause()>PaUsE</button><button class='shifumiBou' onclick=document.getElementById('player').volume+=1>Vol Up</button><button class='shifumiBou' onclick=document.getElementById('player').volume-=1>Vol Down</button>";
+	$("cplayer").innerHTML = "<button class='shifumiBou' onclick=document.getElementById('player').play()>PlAy</button><button class='shifumiBou' onclick=document.getElementById('player').pause()>PaUsE</button><button class='shifumiBou' onclick=document.getElementById('player').volume+=0.1>Vol Up</button><button class='shifumiBou' onclick=document.getElementById('player').volume-=0.1>Vol Down</button>";
 };
 function quatorze(){
 	cleandiv("bozendo");
