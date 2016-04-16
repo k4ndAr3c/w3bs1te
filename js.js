@@ -298,6 +298,7 @@ function music(){
 		};
 };
 function songs(){
+	cleandiv("music2");
 	var b = document.createElement('form');
 	b.id="music2";
 	b.name="artiste";
@@ -307,14 +308,16 @@ function songs(){
 	var style = $("musique").value;
 	document.getElementById(style).onchange = function(){
 		var art = document.getElementById(style).value;
-		if (art == "dimmu"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('dimmu'); class='shifumiBou'>"}
-        	else if (art == "finntroll"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>Blodsvept<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('finntroll'); class='shifumiBou'>"}
-        	else if (art == "horna"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('horna'); class='shifumiBou'>"}
-        	else if (art == "kronos"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('kronos'); class='shifumiBou'>"}
-        	else if (art == "gronibard"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('gronibard'); class='shifumiBou'>"}
+		if (art == "dimmu"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::=><input type='checkbox' name='check' onclick=start('dimmu'); class='shifumiBou'>"}
+        	else if (art == "finntroll"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>Blodsvept<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::=><input type='checkbox' name='check' onclick=start('finntroll'); class='shifumiBou'>"}
+        	else if (art == "horna"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::=><input type='checkbox' name='check' onclick=start('horna'); class='shifumiBou'>"}
+        	else if (art == "kronos"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::=><input type='checkbox' name='check' onclick=start('kronos'); class='shifumiBou'>"}
+        	else if (art == "gronibard"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::=><input type='checkbox' name='check' onclick=start('gronibard'); class='shifumiBou'>"}
 		};
 };
 function start(aut){
+	cleandiv("player");
+	cleandiv("cplayer");
 	s = document.createElement("audio");
 	songval = document.forms.artiste.artist.value;
 	document.forms.artiste.check.checked = false;
@@ -326,7 +329,8 @@ function start(aut){
         cplayer.id="cplayer";
 	document.body.appendChild(cplayer);
 	sleep(200);
-	$("cplayer").innerHTML = "<button class='shifumiBou' onclick=document.getElementById('player').play()>PlAy</button><button class='shifumiBou' onclick=document.getElementById('player').pause()>PaUsE</button><button class='shifumiBou' onclick=document.getElementById('player').volume+=1>Vol Up</button><button class='shifumiBou' onclick=document.getElementById('player').volume-=1>Vol Down</button>"
+	document.getElementById('player').play();
+	$("cplayer").innerHTML = "<button class='shifumiBou' onclick=document.getElementById('player').play()>PlAy</button><button class='shifumiBou' onclick=document.getElementById('player').pause()>PaUsE</button><button class='shifumiBou' onclick=document.getElementById('player').volume+=1>Vol Up</button><button class='shifumiBou' onclick=document.getElementById('player').volume-=1>Vol Down</button>";
 };
 function quatorze(){
 	cleandiv("bozendo");
