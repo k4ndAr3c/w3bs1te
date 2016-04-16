@@ -289,7 +289,7 @@ function music(){
 	a.setAttribute("align", "center");
         document.body.appendChild(a);
 	sleep("200");
-	$("music").innerHTML = "<select name='musique' id='musique' class='shifumiBou' size='1'><option value='-'>-</option><option value='metal'>MeTaL</option><option value='rap'>RaP</option><option value='dub'>DuB</option><option value='jazz'>JaZz</option><option value='elec'>ElEcTrO</option></select><select class='shifumiBou' name='metal' id='metal' size='1'><option value='-'>-</option><option value='dimmu'>Dimmu Borgir</option><option value='finntroll'>FinnTroll</option><option value='horna'>Horna</option><option value='kronos'>Kronos</option><option value='Gronibard'>Gronibard</option></select><select class='shifumiBou' name='rap' id='rap' size='1'><option value='-'>-</option><option value='hugo'>Hugo</option><option value='iam'>I Am</option><option value='assassin'>Assassin</option><option value='ntm'>NTM</option><option value='mcsolaar'>Solaar</option></select><select class='shifumiBou' name='dub' id='dub' size='1'><option value='-'>-</option><option value='panda'>Panda Dub</option><option value='kanka'>Kanka</option><option value='dubalyzer'>Dubalyzer</option><option value='perry'>Lee Perry</option><option value='kali'>Kali Live Dub</option></select><select class='shifumiBou' name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='martino'>Pat Martino</option><option value='django'>Django Reinhardt</option><option value='joepass'>Joe Pass</option><option value='wes'>Wes Montgomery</option><option value='louis'>Louis Armstrong</option></select><select class='shifumiBou' name='elec' id='elec' size='1'><option value='-'>-</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>"
+	$("music").innerHTML = "<select name='musique' id='musique' class='shifumiBou' size='1'><option value='-'>-</option><option value='metal'>MeTaL</option><option value='rap'>RaP</option><option value='dub'>DuB</option><option value='jazz'>JaZz</option><option value='elec'>ElEcTrO</option></select><select class='shifumiBou' name='metal' id='metal' size='1'><option value='-'>-</option><option value='dimmu'>Dimmu Borgir</option><option value='finntroll'>FinnTroll</option><option value='horna'>Horna</option><option value='kronos'>Kronos</option><option value='gronibard'>Gronibard</option></select><select class='shifumiBou' name='rap' id='rap' size='1'><option value='-'>-</option><option value='hugo'>Hugo</option><option value='iam'>I Am</option><option value='assassin'>Assassin</option><option value='ntm'>NTM</option><option value='mcsolaar'>Solaar</option></select><select class='shifumiBou' name='dub' id='dub' size='1'><option value='-'>-</option><option value='panda'>Panda Dub</option><option value='kanka'>Kanka</option><option value='dubalyzer'>Dubalyzer</option><option value='perry'>Lee Perry</option><option value='kali'>Kali Live Dub</option></select><select class='shifumiBou' name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='martino'>Pat Martino</option><option value='django'>Django Reinhardt</option><option value='joepass'>Joe Pass</option><option value='wes'>Wes Montgomery</option><option value='louis'>Louis Armstrong</option></select><select class='shifumiBou' name='elec' id='elec' size='1'><option value='-'>-</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>"
 	sleep("200");
 	$("musique").onchange = function(){
         var listValue = $("musique").value;
@@ -300,18 +300,35 @@ function music(){
 function songs(){
 	var b = document.createElement('form');
 	b.id="music2";
+	b.name="artiste";
 	b.setAttribute("align", "center");
 	document.body.appendChild(b);
 	sleep("200");
 	var style = $("musique").value;
 	document.getElementById(style).onchange = function(){
 		var art = document.getElementById(style).value;
-		if (art == "dimmu"){$("music2").innerHTML = "<input type ='radio' name='dimmu' value='1'>First<br><input type ='radio' name='dimmu' value='2'>Deux<br><input type ='radio' name='dimmu' value='3'>Trois"}
-        	else if (art == "finntroll"){$("music2").innerHTML = "<input type ='radio' name='finntroll' value='1'>First<br><input type ='radio' name='finntroll' value='2'>Deux<br><input type ='radio' name='finntroll' value='3'>Trois"}
-        	else if (art == "horna"){$("music2").innerHTML = "<input type ='radio' name='horna' value='1'>First<br><input type ='radio' name='horna' value='2'>Deux<br><input type ='radio' name='horna' value='3'>Trois"}
-        	else if (art == "kronos"){$("music2").innerHTML = "<input type ='radio' name='kronos' value='1'>First<br><input type ='radio' name='kronos' value='2'>Deux<br><input type ='radio' name='kronos' value='3'>Trois"}
-        	else if (art == "gronibard"){$("music2").innerHTML = "<input type ='radio' name='gronibard' value='1'>First<br><input type ='radio' name='gronibard' value='2'>Deux<br><input type ='radio' name='gronibard' value='3'>Trois"}
+		if (art == "dimmu"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('dimmu'); class='shifumiBou'>"}
+        	else if (art == "finntroll"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>Blodsvept<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('finntroll'); class='shifumiBou'>"}
+        	else if (art == "horna"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('horna'); class='shifumiBou'>"}
+        	else if (art == "kronos"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('kronos'); class='shifumiBou'>"}
+        	else if (art == "gronibard"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° ::<input type='checkbox' name='check' onclick=start('gronibard'); class='shifumiBou'>"}
 		};
+};
+function start(aut){
+	s = document.createElement("audio");
+	songval = document.forms.artiste.artist.value;
+	document.forms.artiste.check.checked = false;
+	s.id="player";
+	s.class="shifumiBou";
+	s.type="audio/mp3";
+	s.src = "http://www.clairemaindor.fr/z1c/"+aut+songval+".mp3";
+	document.body.appendChild(s);
+	cplayer = document.createElement("div");
+        cplayer.id="cplayer";
+	s.class="shifumiBou";
+	document.body.appendChild(cplayer);
+	sleep(200);
+	$("cplayer").innerHTML = "<button onclick=document.getElementById('player').play()>PlAy</button><button onclick=document.getElementById('player').pause()>PaUsE</button><button onclick=document.getElementById('player').volume+=1>Vol Up</button><button onclick=document.getElementById('player').volume-=1>Vol Down</button>"
 };
 function quatorze(){
 	cleandiv("bozendo");
