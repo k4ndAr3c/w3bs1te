@@ -227,7 +227,7 @@ function writeResult(res){
 };
 function indice(){
 	if (scoreh == 3){writeResult("Clue/indice : some functions can be trigger by keywords / certaines fonctions se déclenchent par mots-clés")};
-	if (scoreh == 6){writeResult("Try : love")};
+	if (scoreh == 6){writeResult("Try : love      .or.      music")};
 	if (scoreh == 14){quatorze()};
 };
 window.onload = function(){
@@ -288,12 +288,30 @@ function music(){
         a.id="music";
 	a.setAttribute("align", "center");
         document.body.appendChild(a);
-	sleep("500");
-	$("music").innerHTML = "<select name='musique' id='musique' size='1'><option value='-'>-</option><option value='metal'>MeTaL</option><option value='rap'>RaP</option><option value='dub'>DuB</option><option value='jazz'>JaZz</option><option value='elec'>ElEcTrO</option></select><select name='metal' id='metal' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select><select name='rap' id='rap' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select><select name='dub' id='dub' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select><select name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select><select name='elec' id='elec' size='1'><option value='-'>-</option><option value='metal.jpg'>MeTaL</option><option value='rap.jpg'>RaP</option><option value='dub.jpg'>DuB</option><option value='jazz.jpg'>JaZz</option><option value='elec.jpg'>ElEcTrO</option></select>"
-	sleep("500");
-	$("musique").onchange = function displayList(){
+	sleep("200");
+	$("music").innerHTML = "<select name='musique' id='musique' size='1'><option value='-'>-</option><option value='metal'>MeTaL</option><option value='rap'>RaP</option><option value='dub'>DuB</option><option value='jazz'>JaZz</option><option value='elec'>ElEcTrO</option></select><select name='metal' id='metal' size='1'><option value='-'>-</option><option value='dimmu'>Dimmu Borgir</option><option value='finntroll'>FinnTroll</option><option value='horna'>Horna</option><option value='kronos'>Kronos</option><option value='Gronibard'>Gronibard</option></select><select name='rap' id='rap' size='1'><option value='-'>-</option><option value='hugo'>Hugo</option><option value='iam'>I Am</option><option value='assassin'>Assassin</option><option value='ntm'>NTM</option><option value='mcsolaar'>Solaar</option></select><select name='dub' id='dub' size='1'><option value='-'>-</option><option value='panda'>Panda Dub</option><option value='kanka'>Kanka</option><option value='dubalyzer'>Dubalyzer</option><option value='perry'>Lee Perry</option><option value='kali'>Kali Live Dub</option></select><select name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='martino'>Pat Martino</option><option value='django'>Django Reinhardt</option><option value='joepass'>Joe Pass</option><option value='wes'>Wes Montgomery</option><option value='louis'>Louis Armstrong</option></select><select name='elec' id='elec' size='1'><option value='-'>-</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>"
+	sleep("200");
+	$("musique").onchange = function(){
         var listValue = $("musique").value;
         $(listValue).style.visibility = "visible";
+	songs();
+		};
+};
+function songs(){
+	var b = document.createElement('form');
+	b.id="music2";
+	b.setAttribute("align", "center");
+	document.body.appendChild(b);
+	sleep("200");
+	var style = $("musique").value;
+	document.getElementById(style).onchange = function(){
+		var art = document.getElementById(style).value;
+		alert(art);
+		if (art == "dimmu"){$("music2").innerHTML = "<input type ='radio' name='dimmu' value='1'>First<input type ='radio' name='dimmu' value='2'>Deux<input type ='radio' name='dimmu' value='3'>Trois<input type ='radio' name='dimmu' value='4'>Quatre"}
+        	else if (art == "finntroll"){$("music2").innerHTML = "<input type ='radio' name='finntroll' value='1'>First<input type ='radio' name='finntroll' value='2'>Deux<input type ='radio' name='finntroll' value='3'>Trois<input type ='radio' name='finntroll' value='4'>Quatre"}
+        	else if (art == "horna"){$("music2").innerHTML = "<input type ='radio' name='horna' value='1'>First<input type ='radio' name='horna' value='2'>Deux<input type ='radio' name='horna' value='3'>Trois<input type ='radio' name='horna' value='4'>Quatre"}
+        	else if (art == "kronos"){$("music2").innerHTML = "<input type ='radio' name='kronos' value='1'>First<input type ='radio' name='kronos' value='2'>Deux<input type ='radio' name='kronos' value='3'>Trois<input type ='radio' name='kronos' value='4'>Quatre"}
+        	else if (art == "gronibard"){$("music2").innerHTML = "<input type ='radio' name='gronibard' value='1'>First<input type ='radio' name='gronibard' value='2'>Deux<input type ='radio' name='gronibard' value='3'>Trois<input type ='radio' name='gronibard' value='4'>Quatre"}
 		};
 };
 function quatorze(){
