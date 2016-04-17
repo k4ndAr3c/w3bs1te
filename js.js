@@ -153,15 +153,15 @@ function strange(){
 	
 };
 function clairemaindor(){
-    cleandiv("scode");
-    cleandiv("artii");
-    cleandiv("heart");
-    cleandiv("brucepong");                                                                                                      
-    var a = document.createElement('iframe');
-    a.id="claire";
-    a.src="http://www.clairemaindor.fr";
-    a.frameborder="0";
-    document.body.appendChild(a);
+//    cleandiv("scode");
+//    cleandiv("artii");
+//    cleandiv("heart");
+//    cleandiv("brucepong");                                                                                                      
+//    var a = document.createElement('iframe');
+//    a.id="claire";
+    document.location="http://www.clairemaindor.fr";
+//    a.frameborder="0";
+//    document.body.appendChild(a);
 };
 function pixel(){
 	$("pixel").onmouseover = bingo();
