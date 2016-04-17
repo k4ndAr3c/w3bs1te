@@ -101,7 +101,11 @@ function shifumi(){
 	    }else if (choice1 == "musique"){
 	    	music();
 		scoreh += 1;
+	    }else if (choice1 == "radio"){
+	    	radio(prompt("st-aff=0, larzac=1, ledjam=2, choose a radio."));
+		scoreh += 1;
 	    }
+
 
 
 
@@ -380,4 +384,16 @@ function brucepong(){
 	a.src="https://www.youtube.com/embed/SncapPrTusA";
 	a.frameborder="0";
 	document.body.appendChild(a);
+};
+function radio(r){
+    cleandiv("radio");
+    var radios = ["http://www.radiosaintaffrique.com/en-direct", "http://www.radiolarzac.org:8000/radiolarzac.m3u", "http://www.ledjamradio.com"];
+    var a = document.createElement('iframe');
+    a.setAttribute("align", "middle");
+    a.width="640";
+    a.height="360";
+    a.id="radio";
+    a.src=radios[r];
+    a.frameborder="0";
+    document.body.appendChild(a);
 };
