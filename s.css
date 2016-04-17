@@ -95,3 +95,6 @@ h1 {
 #music2{
   margin-left: 287px;
 }
+#radios{
+  visibility: hidden;
+}
