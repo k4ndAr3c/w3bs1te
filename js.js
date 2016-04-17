@@ -153,7 +153,15 @@ function strange(){
 	
 };
 function clairemaindor(){
-	document.location = "http://www.clairemaindor.fr/";
+    cleandiv("scode");
+    cleandiv("artii");
+    cleandiv("heart");
+    cleandiv("brucepong");                                                                                                      
+    var a = document.createElement('iframe');
+    a.id="claire";
+    a.src="http://www.clairemaindor.fr";
+    a.frameborder="0";
+    document.body.appendChild(a);
 };
 function pixel(){
 	$("pixel").onmouseover = bingo();
