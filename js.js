@@ -101,8 +101,20 @@ function shifumi(){
 	    }else if (choice1 == "musique"){
 	    	music();
 		scoreh += 1;
+	    }else if (choice1 == 0){
+	    	radio("0");
+		writeResult("radio St-Aff");
+		scoreh += 1;
+	    }else if (choice1 == 1){
+	    	radio("1");
+		writeResult("radio Larzac");
+		scoreh += 1;
 	    }else if (choice1 == "radio"){
 	    	radio(prompt("st-aff=0, larzac=1, ledjam=2, choose a radio."));
+		scoreh += 1;
+	    }else if (choice1 == 2){
+	    	radio("2");
+		writeResult("radio LeDjam");
 		scoreh += 1;
 	    }
 
@@ -233,6 +245,12 @@ function madnana(){
 	document.body.appendChild(h);
 	$("heart").className= "rotateImg";
 	$("heart").style.webkitAnimationPlayState = "running";
+        s = document.createElement("audio");
+        s.id="madplayer";
+        s.type="audio/mp3";
+        s.src = "no.no.no.mp3";
+        document.body.appendChild(s);
+	document.getElementById('madplayer').play();
 };
 function writeResult(res){
 	$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>"+res+"</b></p>";
@@ -296,12 +314,18 @@ function music(){
         cleandiv("artii");
         cleandiv("scode");
         cleandiv("heart");
+	cleandiv("radio");
         var a = document.createElement('div');
         a.id="music";
 	a.setAttribute("align", "center");
         document.body.appendChild(a);
 	sleep("200");
-	$("music").innerHTML = "<select name='musique' id='musique' class='shifumiBou' size='1'><option value='-'>-</option><option value='metal'>MeTaL</option><option value='rap'>RaP</option><option value='dub'>DuB</option><option value='jazz'>JaZz</option><option value='elec'>ElEcTrO</option><option value='radios'>RaDiOs</option></select><select class='shifumiBou' name='metal' id='metal' size='1'><option value='-'>-</option><option value='dimmu'>Dimmu Borgir</option><option value='finntroll'>FinnTroll</option><option value='horna'>Horna</option><option value='kronos'>Kronos</option><option value='gronibard'>Gronibard</option></select><select class='shifumiBou' name='rap' id='rap' size='1'><option value='-'>-</option><option value='hugo'>Hugo</option><option value='iam'>I Am</option><option value='assassin'>Assassin</option><option value='ntm'>NTM</option><option value='mcsolaar'>Solaar</option></select><select class='shifumiBou' name='dub' id='dub' size='1'><option value='-'>-</option><option value='panda'>Panda Dub</option><option value='kanka'>Kanka</option><option value='dubalyzer'>Dubalyzer</option><option value='perry'>Lee Perry</option><option value='kali'>Kali Live Dub</option></select><select class='shifumiBou' name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='martino'>Pat Martino</option><option value='django'>Django Reinhardt</option><option value='joepass'>Joe Pass</option><option value='wes'>Wes Montgomery</option><option value='louis'>Louis Armstrong</option></select><select class='shifumiBou' name='elec' id='elec' size='1'><option value='-'>-</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><select class='shifumiBou' name='radios' id='radios' size='1'><option value='-'>-</          option><option value='0'>St-Affrique</option><option value='1'>Larzac</option><option value='2'>LeDjam</option></select>"
+	$("music").innerHTML = "<select name='musique' id='musique' class='shifumiBou' size='1'><option value='-'>-</option><option value='metal'>MeTaL</option><option value='rap'>RaP</option><option value='dub'>DuB</option><option value='jazz'>JaZz</option><option value='elec'>ElEcTrO</option><option value='radios'>RaDiOs</option></select>"
+        var r = document.createElement('div');
+        r.id="musicc";
+	r.setAttribute("align", "center");
+        document.body.appendChild(r);
+	$("musicc").innerHTML = "<select class='shifumiBou' name='metal' id='metal' size='1'><option value='-'>-</option><option value='dimmu'>Dimmu Borgir</option><option value='finntroll'>FinnTroll</option><option value='horna'>Horna</option><option value='kronos'>Kronos</option><option value='gronibard'>Gronibard</option></select><select class='shifumiBou' name='rap' id='rap' size='1'><option value='-'>-</option><option value='hugo'>Hugo</option><option value='iam'>I Am</option><option value='assassin'>Assassin</option><option value='ntm'>NTM</option><option value='mcsolaar'>Solaar</option></select><select class='shifumiBou' name='dub' id='dub' size='1'><option value='-'>-</option><option value='panda'>Panda Dub</option><option value='kanka'>Kanka</option><option value='dubalyzer'>Dubalyzer</option><option value='perry'>Lee Perry</option><option value='kali'>Kali Live Dub</option></select><select class='shifumiBou' name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='martino'>Pat Martino</option><option value='django'>Django Reinhardt</option><option value='joepass'>Joe Pass</option><option value='wes'>Wes Montgomery</option><option value='louis'>Louis Armstrong</option></select><select class='shifumiBou' name='elec' id='elec' size='1'><option value='-'>-</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><select class='shifumiBou' name='radios' id='radios' size='1'><option value='-'>-</          option><option value='0'>St-Affrique</option><option value='1'>Larzac</option><option value='2'>LeDjam</option></select>"
 	sleep("200");
 	$("musique").onchange = function(){
         var listValue = $("musique").value;
