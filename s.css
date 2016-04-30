@@ -98,3 +98,19 @@ h1 {
 #radios{
   visibility: hidden;
 }
+.loupe {
+  animation-name: combo;
+  perspective: 600px;
+  animation-duration: 8s;
+  animation-delay: 3s;
+  transition:all 8s;
+  animation-iteration-count: 1;
+  border-radius: 80%;
+} 
+@keyframes combo{
+  from{
+    transform: translate(0px,0px) scale3d(1,1,1) transform: rotate3d(1,1,1,0deg);
+  }to{
+    transform: translate(-167px,-65px) scale3d(2,1,2) rotate3d(1,1,1,20deg);
+  }
+}

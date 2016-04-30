@@ -116,7 +116,11 @@ function shifumi(){
 	    	radio("2");
 		writeResult("radio LeDjam");
 		scoreh += 1;
+	    }else if (choice1 == "combo"){
+	    	combo();
+		scoreh += 1;
 	    }
+
 
 
 
@@ -328,9 +332,15 @@ function music(){
 	$("musicc").innerHTML = "<select class='shifumiBou' name='metal' id='metal' size='1'><option value='-'>-</option><option value='dimmu'>Dimmu Borgir</option><option value='finntroll'>FinnTroll</option><option value='horna'>Horna</option><option value='kronos'>Kronos</option><option value='gronibard'>Gronibard</option></select><select class='shifumiBou' name='rap' id='rap' size='1'><option value='-'>-</option><option value='hugo'>Hugo</option><option value='iam'>I Am</option><option value='assassin'>Assassin</option><option value='ntm'>NTM</option><option value='mcsolaar'>Solaar</option></select><select class='shifumiBou' name='dub' id='dub' size='1'><option value='-'>-</option><option value='panda'>Panda Dub</option><option value='kanka'>Kanka</option><option value='dubalyzer'>Dubalyzer</option><option value='perry'>Lee Perry</option><option value='kali'>Kali Live Dub</option></select><select class='shifumiBou' name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='martino'>Pat Martino</option><option value='django'>Django Reinhardt</option><option value='joepass'>Joe Pass</option><option value='wes'>Wes Montgomery</option><option value='louis'>Louis Armstrong</option></select><select class='shifumiBou' name='elec' id='elec' size='1'><option value='-'>-</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><select class='shifumiBou' name='radios' id='radios' size='1'><option value='-'>-</option><option value='0'>St-Affrique</option><option value='1'>Larzac</option><option value='2'>LeDjam</option></select>"
 	sleep("200");
 	$("musique").onchange = function(){
-        var listValue = $("musique").value;
-        $(listValue).style.visibility = "visible";
-	songs();
+        	var listValue = $("musique").value;
+		$("metal").style.visibility = "hidden";
+		$("rap").style.visibility = "hidden";
+		$("dub").style.visibility = "hidden";
+		$("jazz").style.visibility = "hidden";
+		$("elec").style.visibility = "hidden";
+		$("radios").style.visibility = "hidden";
+        	$(listValue).style.visibility = "visible";
+		songs();
 		};
 };
 function songs(){
@@ -344,11 +354,11 @@ function songs(){
 	var style = $("musique").value;
 	document.getElementById(style).onchange = function(){
 		var art = document.getElementById(style).value;
-		if (art == "dimmu"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° :: == >> <input type='checkbox' name='check' onclick=start('dimmu'); class='shifumiBou'>"}
-        	else if (art == "finntroll"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>Blodsvept<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° :: == >> <input type='checkbox' name='check' onclick=start('finntroll'); class='shifumiBou'>"}
-        	else if (art == "horna"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° :: == >> <input type='checkbox' name='check' onclick=start('horna'); class='shifumiBou'>"}
-        	else if (art == "kronos"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° :: == >> <input type='checkbox' name='check' onclick=start('kronos'); class='shifumiBou'>"}
-        	else if (art == "gronibard"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° :: == >> <input type='checkbox' name='check' onclick=start('gronibard'); class='shifumiBou'>"}
+		if (art == "dimmu"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('dimmu'); class='shifumiBou'>"}
+        	else if (art == "finntroll"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>Blodsvept<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('finntroll'); class='shifumiBou'>"}
+        	else if (art == "horna"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('horna'); class='shifumiBou'>"}
+        	else if (art == "kronos"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°'onclick=start('kronos'); class='shifumiBou'>"}
+        	else if (art == "gronibard"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('gronibard'); class='shifumiBou'>"}
         	else if (art == "0"){radio(art);}
         	else if (art == "1"){radio(art);}
         	else if (art == "2"){radio(art);}
@@ -361,7 +371,7 @@ function start(aut){
 	cleandiv("cplayer");
 	s = document.createElement("audio");
 	songval = document.forms.artiste.artist.value;
-	document.forms.artiste.check.checked = false;
+	//document.forms.artiste.check.checked = false;
 	s.id="player";
 	s.type="audio/mp3";
 	s.src = "http://www.clairemaindor.fr/z1c/"+aut+songval+".mp3";
@@ -434,3 +444,19 @@ function radio(r){
     a.frameborder="0";
     document.body.appendChild(a);
 };
+function combo(){
+	cleandiv("artii");
+	cleandiv("bozendo");
+	cleandiv("scode");
+        cleandiv("brucepong");
+	cleandiv("heart");
+	var h = document.createElement('img');
+	h.src="combo.jpg";
+	h.id = "combo";
+	h.setAttribute("data-animation",  "combo");
+	h.setAttribute("align", "right");
+	document.body.appendChild(h);
+	$("combo").className= "loupe";
+	$("combo").style.webkitAnimationPlayState = "running";
+};
+
