@@ -140,6 +140,7 @@ function shifumi(){
 function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez !:. --</b></p>";};
 function artii(w){
 	cleandiv("scode");
+	cleandiv("combo");
 	cleandiv("brucepong");
 	cleandiv("bozendo");
 	cleandiv("heart");
@@ -191,6 +192,7 @@ function bingo(){
 };
 function bozendo(){
 	cleandiv("scode");
+	cleandiv("combo");
         cleandiv("artii");
         cleandiv("heart");
         cleandiv("brucepong");
@@ -238,6 +240,7 @@ function deshuf(){
 };
 function madnana(){
 	cleandiv("artii");
+	cleandiv("combo");
 	cleandiv("bozendo");
 	cleandiv("scode");
         cleandiv("brucepong");
@@ -315,6 +318,7 @@ function date(){
 //}
 function music(){
 	cleandiv("bozendo");
+	cleandiv("combo");
         cleandiv("artii");
         cleandiv("scode");
         cleandiv("heart");
@@ -385,6 +389,7 @@ function start(aut){
 };
 function quatorze(){
 	cleandiv("bozendo");
+	cleandiv("combo");
 	cleandiv("artii");
 	cleandiv("heart");
 	cleandiv("brucepong");
@@ -420,6 +425,7 @@ function cons(){
 };
 function brucepong(){
 	cleandiv("bozendo");
+	cleandiv("combo");
         cleandiv("artii");
 	cleandiv("scode");
         cleandiv("heart");
@@ -437,6 +443,7 @@ function radio(r){
     cleandiv("artii");
     cleandiv("bozendo");
     cleandiv("scode");
+    cleandiv("combo");
     cleandiv("brucepong");
     cleandiv("heart");
     var rads = ["http://www.radiosaintaffrique.com/en-direct", "http://www.radiolarzac.org:8000/radiolarzac.m3u", "http://www.ledjamradio.com"];
