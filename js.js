@@ -81,6 +81,7 @@ function shifumi(){
 	    }else if (choice1 == ""){
 	    	vide();
 	    }else if (choice1 == "null"){
+		scoreh += 1;
 	    	vide();
 	    }else if (choice1 == "madnana"){
 	    	madnana();
