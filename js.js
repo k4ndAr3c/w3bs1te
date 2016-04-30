@@ -80,6 +80,8 @@ function shifumi(){
 		scoreh += 1;
 	    }else if (choice1 == ""){
 	    	vide();
+	    }else if (choice1 == "null"){
+	    	vide();
 	    }else if (choice1 == "madnana"){
 	    	madnana();
 		scoreh += 1;
@@ -137,7 +139,7 @@ function shifumi(){
 	indice();
 	return;
 };
-function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez !:. --</b></p>";};
+function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez ,.. test something !:. --</b></p>";};
 function artii(w){
 	cleandiv("scode");
 	cleandiv("combo");
