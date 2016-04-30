@@ -107,8 +107,8 @@ h1 {
   animation-iteration-count: 2;
   animation-direction: alternate;
   border-radius: 80%;
-  width: 187px;
-  height: 236px;
+  width: 154px;
+  height: 205px;
 } 
 @keyframes combo{
   from{
