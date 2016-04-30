@@ -434,6 +434,11 @@ function brucepong(){
 };
 function radio(r){
     cleandiv("radio");
+    cleandiv("artii");
+    cleandiv("bozendo");
+    cleandiv("scode");
+    cleandiv("brucepong");
+    cleandiv("heart");
     var rads = ["http://www.radiosaintaffrique.com/en-direct", "http://www.radiolarzac.org:8000/radiolarzac.m3u", "http://www.ledjamradio.com"];
     var a = document.createElement('iframe');
     a.setAttribute("align", "middle");
