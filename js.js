@@ -324,6 +324,16 @@ function music(){
 		songs();
 		};
 };
+function showSongs(grou){
+	if (grou == "dimmu"){g = ["fIRST", "sEC", "tROIs"];}
+	else if (grou == "finntroll"){g = ["Blodsvept", "Two", "3"];}
+	else if (grou == "horna"){g = ["Prems", "Deux", "Three"];}
+	var first = g[0];
+	var seconde =  g[1];
+	var third = g[2];
+	$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>"+first+"<br><input type ='radio' name='artist' value='2'>"+seconde+"<br><input type ='radio' name='artist' value='3'>"+third+"<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('"+grou+"'); class='shifumiBou'>"
+
+};
 function songs(){
 	cleandiv("music2");
 	var b = document.createElement('form');
@@ -335,16 +345,10 @@ function songs(){
 	var style = $("musique").value;
 	document.getElementById(style).onchange = function(){
 		var art = document.getElementById(style).value;
-		if (art == "dimmu"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('dimmu'); class='shifumiBou'>"}
-        	else if (art == "finntroll"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>Blodsvept<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('finntroll'); class='shifumiBou'>"}
-        	else if (art == "horna"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('horna'); class='shifumiBou'>"}
-        	else if (art == "kronos"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°'onclick=start('kronos'); class='shifumiBou'>"}
-        	else if (art == "gronibard"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('gronibard'); class='shifumiBou'>"}
-        	else if (art == "0"){radio(art);}
-        	else if (art == "1"){radio(art);}
-        	else if (art == "2"){radio(art);}
-        	else if (art == "kronos"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° :: == >> <input type='checkbox' name='check' onclick=start('kronos'); class='shifumiBou'>"}
-        	else if (art == "gronibard"){$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>First<br><input type ='radio' name='artist' value='2'>Deux<br><input type ='radio' name='artist' value='3'>Trois<br>°:. Play .:° :: == >> <input type='checkbox' name='check' onclick=start('gronibard'); class='shifumiBou'>"}
+		if (art == "0"){radio(art);}
+                else if (art == "1"){radio(art);}
+                else if (art == "2"){radio(art);}
+		else {showSongs(art);}
 		};
 };
 function start(aut){
