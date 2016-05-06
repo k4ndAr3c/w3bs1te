@@ -331,7 +331,7 @@ function showSongs(grou){
 	var first = g[0];
 	var seconde =  g[1];
 	var third = g[2];
-	$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>"+first+"<br><input type ='radio' name='artist' value='2'>"+seconde+"<br><input type ='radio' name='artist' value='3'>"+third+"<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('"+grou+"'); class='shifumiBou'>"
+	$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>"+first+"<br><input type ='radio' name='artist' value='2'>"+seconde+"<br><input type ='radio' name='artist' value='3'>"+third+"<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('"+grou+"'); class='shifumiBou' id='playbut'>"
 
 };
 function songs(){
