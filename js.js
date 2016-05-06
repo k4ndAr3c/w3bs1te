@@ -76,7 +76,7 @@ function shifumi(){
 		vidz(0);
 		scoreh += 1;
 	    }else if (choice1 == "fun"){
-		fun();
+		vidz(2);
 		scoreh += 1;
 	    }else if (choice1 == ""){
 	    	vide();
@@ -438,7 +438,7 @@ function vidz(v){
 	cleandiv("combo");
         cleandiv("artii");
         cleandiv("heart");
-	urls = ["https://www.youtube.com/embed/JjaUltnVmWg", "https://www.youtube.com/embed/SncapPrTusA"]
+	urls = ["https://www.youtube.com/embed/JjaUltnVmWg", "https://www.youtube.com/embed/SncapPrTusA", "http://www.randomfunfacts.com"]
 //0=SanKyo,1=BrucePong,
 	var a = document.createElement('iframe');
 	a.align = "middle";
