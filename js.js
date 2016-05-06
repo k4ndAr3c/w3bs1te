@@ -73,7 +73,7 @@ function shifumi(){
 		writeResult(".:|  Find a piXel  |:.");
 		scoreh += 1;
 	    }else if (choice1 == "bozendo"){
-		bozendo();
+		vidz(0);
 		scoreh += 1;
 	    }else if (choice1 == "fun"){
 		fun();
@@ -96,10 +96,10 @@ function shifumi(){
 	    	writeResult("7 + 7 = ?");
 		scoreh += 1;
 	    }else if (choice1 == "ping"){
-		brucepong();
+		vidz(1);
 		scoreh += 1;
 	    }else if (choice1 == "pong"){
-	    	brucepong();
+	    	vidz(1);
 		scoreh += 1;
 	    }else if (choice1 == "musique"){
 	    	music();
@@ -120,17 +120,9 @@ function shifumi(){
 		writeResult("radio LeDjam");
 		scoreh += 1;
 	    }else if (choice1 == "combo"){
-	    	combo();
+	    	combo(0);
 		scoreh += 1;
 	    }
-
-
-
-
-
-
-
-
 
 
 
@@ -144,8 +136,7 @@ function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Co
 function artii(w){
 	cleandiv("scode");
 	cleandiv("combo");
-	cleandiv("brucepong");
-	cleandiv("bozendo");
+	cleandiv("vidz");
 	cleandiv("heart");
 	var a = document.createElement('div');
 	req.open("GET", w+".artii", true);
@@ -176,7 +167,7 @@ function clairemaindor(){
 //    cleandiv("scode");
 //    cleandiv("artii");
 //    cleandiv("heart");
-//    cleandiv("brucepong");                                                                                                      
+//    cleandiv("vidz");                                                                                                      
 //    var a = document.createElement('iframe');
 //    a.id="claire";
     document.location="http://www.clairemaindor.fr";
@@ -192,21 +183,6 @@ function bingo(){
 	$("titre").innerHTML = " Goodbye World! ";
 	document.body.style.backgroundImage = "url('blackBG3.jpg')";
 	$("date").setAttribute("align", "left");
-};
-function bozendo(){
-	cleandiv("scode");
-	cleandiv("combo");
-        cleandiv("artii");
-        cleandiv("heart");
-        cleandiv("brucepong");
-	var a = document.createElement('iframe');
-	a.align = "middle";
-	a.width="640";
-	a.height="360";
-	a.id="bozendo";
-	a.src="https://www.youtube.com/embed/JjaUltnVmWg";
-	a.frameborder="0";
-	document.body.appendChild(a)[0];
 };
 function shuffle(v){
     for(var j, x, i = v.length; i; j = parseInt(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
@@ -244,9 +220,8 @@ function deshuf(){
 function madnana(){
 	cleandiv("artii");
 	cleandiv("combo");
-	cleandiv("bozendo");
 	cleandiv("scode");
-        cleandiv("brucepong");
+        cleandiv("vidz");
 	var h = document.createElement('img');
 	h.src="Heart_Beating.gif";
 	h.id = "heart";
@@ -320,7 +295,6 @@ function date(){
 //	$(listValue).style.visibility = "visible";
 //}
 function music(){
-	cleandiv("bozendo");
 	cleandiv("combo");
         cleandiv("artii");
         cleandiv("scode");
@@ -391,11 +365,10 @@ function start(aut){
 	$("cplayer").innerHTML = "<button class='shifumiBou' onclick=document.getElementById('player').play()>PlAy</button><button class='shifumiBou' onclick=document.getElementById('player').pause()>PaUsE</button><button class='shifumiBou' onclick=document.getElementById('player').volume+=0.1>Vol Up</button><button class='shifumiBou' onclick=document.getElementById('player').volume-=0.1>Vol Down</button><p> Playing : "+aut;
 };
 function quatorze(){
-	cleandiv("bozendo");
 	cleandiv("combo");
 	cleandiv("artii");
 	cleandiv("heart");
-	cleandiv("brucepong");
+	cleandiv("vidz");
         var a = document.createElement('div');
         req.open("GET", "js.js", true);
         req.setRequestHeader('Content-type', 'text/plain');
@@ -426,28 +399,12 @@ function cons(){
 	//sleep(13500);
 	//cleandiv('cons');
 };
-function brucepong(){
-	cleandiv("bozendo");
-	cleandiv("combo");
-        cleandiv("artii");
-	cleandiv("scode");
-        cleandiv("heart");
-	var a = document.createElement('iframe');
-	a.align = "middle";
-	a.width="640";
-	a.height="360";
-	a.id="brucepong";
-	a.src="https://www.youtube.com/embed/SncapPrTusA";
-	a.frameborder="0";
-	document.body.appendChild(a);
-};
 function radio(r){
     cleandiv("radio");
     cleandiv("artii");
-    cleandiv("bozendo");
     cleandiv("scode");
     cleandiv("combo");
-    cleandiv("brucepong");
+    cleandiv("vidz");
     cleandiv("heart");
     var rads = ["http://www.radiosaintaffrique.com/en-direct", "http://www.radiolarzac.org:8000/radiolarzac.m3u", "http://www.ledjamradio.com"];
     var a = document.createElement('iframe');
@@ -459,14 +416,15 @@ function radio(r){
     a.frameborder="0";
     document.body.appendChild(a);
 };
-function combo(){
+function combo(i){
 	cleandiv("artii");
-	cleandiv("bozendo");
+	cleandiv("combo")
 	cleandiv("scode");
-        cleandiv("brucepong");
+        cleandiv("vidz");
 	cleandiv("heart");
+	imgs = ["combo.jpg"]
 	var h = document.createElement('img');
-	h.src="combo.jpg";
+	h.src = imgs[i];
 	h.id = "combo";
 	h.setAttribute("data-animation",  "combo");
 	h.setAttribute("align", "right");
@@ -474,4 +432,20 @@ function combo(){
 	$("combo").className= "loupe";
 	$("combo").style.webkitAnimationPlayState = "running";
 };
-
+function vidz(v){
+	cleandiv("scode");
+	cleandiv("vidz");
+	cleandiv("combo");
+        cleandiv("artii");
+        cleandiv("heart");
+	urls = ["https://www.youtube.com/embed/JjaUltnVmWg", "https://www.youtube.com/embed/SncapPrTusA"]
+//0=SanKyo,1=BrucePong,
+	var a = document.createElement('iframe');
+	a.align = "middle";
+	a.width="640";
+	a.height="360";
+	a.id="vidz";
+	a.src=urls[v];
+	a.frameborder="0";
+	document.body.appendChild(a)[0];
+};
