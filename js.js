@@ -325,11 +325,14 @@ function music(){
 		};
 };
 function showSongs(grou){
+	$("music2").innerHTML = ""	
 	if (grou == "dimmu"){g = ["fIRST", "sEC", "tROIs"];}
-	else if (grou == "finntroll"){g = ["Blodsvept", "Two", "3"];}
-	else if (grou == "horna"){g = ["Prems", "Deux", "Three"];}
-	$("music2").innerHTML = "<input type ='radio' name='artist' value='1'>"+g[0]+"<br><input type ='radio' name='artist' value='2'>"+g[1]+"<br><input type ='radio' name='artist' value='3'>"+g[2]+"<br><input type='button' name='playButton' value='°:. Play .:°' onclick=start('"+grou+"'); class='shifumiBou' id='playbut'>"
-
+	else if (grou == "finntroll"){g = ["Blodsvept", "Two", "3", "4"];}
+	else if (grou == "horna"){g = ["Prems", "Deux"];}
+	for (i=0; i<g.length; i++){
+		$("music2").innerHTML += "<input type ='radio' name='artist' value='"+i+"'>"+g[i]+"<br>"
+		};
+	$("music2").innerHTML += "<input type='button' name='playButton' value='°:. Play .:°' onclick=start('"+grou+"'); class='shifumiBou' id='playbut'>"
 };
 function songs(){
 	cleandiv("music2");
