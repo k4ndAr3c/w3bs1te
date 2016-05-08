@@ -242,7 +242,7 @@ function writeResult(res){
 };
 function indice(){
 	if (scoreh == 3){writeResult("Clue/indice : some functions can be trigger by keywords / certaines fonctions se déclenchent par mots-clés")};
-	if (scoreh == 6){writeResult("Try : love      .or.      music")};
+	if (scoreh == 6){writeResult("Try : love      .or.      radio")};
 	if (scoreh == 14){quatorze()};
 };
 window.onload = function(){
@@ -294,18 +294,18 @@ function date(){
 //	var listValue = $(id).value;
 //	$(listValue).style.visibility = "visible";
 //}
-function createList(d,s){
-	if (s == "metal"){g = ["DimmuBorgir", "Finntroll", "Horna", "Kronos", "Gronibard"];}
-	else if (s == "rap"){g = ["Hugo", "IAm", "NTM", "Solaar"];}
-	else if (s == "dub"){g = ["PandaDub", "Kanka", "LeePerry", "KaliLiveDub"];}
-	else if (s == "jazz"){g = ["PatMartino", "DjangoReinhardt", "JoePass", "WesMontgomery", "LouisArmstrong"];}
-	else if (s == "radios"){g = ["St-Affrique", "Larzac", "LeDjam"];}
-	$(d).innerHTML = "<select class='shifumiBou' name='"+s+"' id='"+s+"' size='1'><option value='-'>-</option>"
-	for (i=0; i<g.length; i++){
-		$(d).innerHTML += "<option value='"+g[i]+"'>"+g[i]+"</option"
-		};
-	$(d).innerHTML += "</select>"
-};
+//function createList(d,s){
+//	if (s == "metal"){g = ["DimmuBorgir", "Finntroll", "Horna", "Kronos", "Gronibard"];}
+//	else if (s == "rap"){g = ["Hugo", "IAm", "NTM", "Solaar"];}
+//	else if (s == "dub"){g = ["PandaDub", "Kanka", "LeePerry", "KaliLiveDub"];}
+//	else if (s == "jazz"){g = ["PatMartino", "DjangoReinhardt", "JoePass", "WesMontgomery", "LouisArmstrong"];}
+//	else if (s == "radios"){g = ["St-Affrique", "Larzac", "LeDjam"];}
+//	$(d).innerHTML = "<select class='shifumiBou' name='"+s+"' id='"+s+"' size='1'><option value='-'>-</option>"
+//	for (i=0; i<g.length; i++){
+//		$(d).innerHTML += "<option value='"+g[i]+"'>"+g[i]+"</option"
+//		};
+//	$(d).innerHTML += "</select>"
+//};
 function music(){
 	cleandiv("combo");
         cleandiv("artii");
