@@ -122,6 +122,15 @@ function shifumi(){
 	    }else if (choice1 == "combo"){
 	    	combo(0);
 		scoreh += 1;
+	    }else if (choice1 == "mimi"){
+	    	combo(1);
+		scoreh += 1;
+	    }else if (choice1 == "mira"){
+	    	combo(1);
+		scoreh += 1;
+	    }else if (choice1 == "mirabelle"){
+	    	combo(1);
+		scoreh += 1;
 	    }
 
 
@@ -435,19 +444,19 @@ function radio(r){
 };
 function combo(i){
 	cleandiv("artii");
-	cleandiv("combo")
+	cleandiv("combo");
 	cleandiv("scode");
-        cleandiv("vidz");
+    cleandiv("vidz");
 	cleandiv("heart");
-	imgs = ["1M9/combo.jpg"]
+	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg"];
 	var h = document.createElement('img');
 	h.src = imgs[i];
-	h.id = "combo";
+	h.id = "i"+i;
 	h.setAttribute("data-animation",  "combo");
 	h.setAttribute("align", "right");
 	document.body.appendChild(h);
-	$("combo").className= "loupe";
-	$("combo").style.webkitAnimationPlayState = "running";
+	$("i"+i).className= "loupe";
+	$("i"+i).style.webkitAnimationPlayState = "running";
 };
 function vidz(v){
 	cleandiv("scode");

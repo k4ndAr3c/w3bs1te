@@ -107,6 +107,8 @@ h1 {
   transition:all 8s;
   animation-iteration-count: 1;
   border-radius: 80%;
+}
+#i0{
   width: 154px;
   height: 205px;
 } 
@@ -125,4 +127,8 @@ h1 {
 }
 #playbut{
   margin-left: 257px;
+}
+#i1{
+  height: 154px;
+  width: 205px;
 }
