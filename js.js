@@ -338,7 +338,7 @@ function music(){
 };
 function showSongs(grou){
 	$("music2").innerHTML = ""	
-	if (grou == "dimmu"){g = ["Masses For The New Messiah", "sEC", "tROIs"];}
+	if (grou == "dimmu"){g = ["Masses For The New Messiah", "Alt lys er svunnet hen", "tROIs"];}
 	else if (grou == "finntroll"){g = ["1", "Blodsvept", "3", "4"];}
 	else if (grou == "horna"){g = ["Prems", "Deux"];}
 	for (i=0; i<g.length; i++){
