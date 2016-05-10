@@ -341,6 +341,7 @@ function showSongs(grou){
 	if (grou == "dimmu"){g = ["Masses For The New Messiah", "Alt lys er svunnet hen", "tROIs"];}
 	else if (grou == "finntroll"){g = ["1", "Blodsvept", "3", "4"];}
 	else if (grou == "horna"){g = ["Hornanvaki", "Deux"];}
+    else if (grou == "kronos"){g = ["Supreme Nordik Reign"];}
 	for (i=0; i<g.length; i++){
 		$("music2").innerHTML += "<input type ='radio' name='artist' value='"+i+"'>"+g[i]+"<br>"
 		};
