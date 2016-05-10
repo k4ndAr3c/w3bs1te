@@ -223,7 +223,7 @@ function madnana(){
 	cleandiv("scode");
         cleandiv("vidz");
 	var h = document.createElement('img');
-	h.src="Heart_Beating.gif";
+	h.src="1M9/Heart_Beating.gif";
 	h.id = "heart";
 	h.setAttribute("data-animation",  "coeur");
 	h.setAttribute("align", "right");
@@ -371,12 +371,12 @@ function start(aut){
 	//document.forms.artiste.check.checked = false;
 	s.id="player";
 	s.type="audio/mp3";
-	s.src = "http://www.clairemaindor.fr/z1c/"+aut+songval+".mp3";
+	s.src = "http://www.clairemaindor.fr/c1z/"+aut+songval+".mp3";
 	document.body.appendChild(s);
 	cplayer = document.createElement("div");
         cplayer.id="cplayer";
 	document.body.appendChild(cplayer);
-	sleep(200);
+	sleep("200");
 	document.getElementById('player').play();
 	$("cplayer").innerHTML = "<button class='shifumiBou' onclick=document.getElementById('player').play()>PlAy</button><button class='shifumiBou' onclick=document.getElementById('player').pause()>PaUsE</button><button class='shifumiBou' onclick=document.getElementById('player').volume+=0.1>Vol Up</button><button class='shifumiBou' onclick=document.getElementById('player').volume-=0.1>Vol Down</button><p> Playing : "+aut;
 };
@@ -438,7 +438,7 @@ function combo(i){
 	cleandiv("scode");
         cleandiv("vidz");
 	cleandiv("heart");
-	imgs = ["combo.jpg"]
+	imgs = ["1M9/combo.jpg"]
 	var h = document.createElement('img');
 	h.src = imgs[i];
 	h.id = "combo";
