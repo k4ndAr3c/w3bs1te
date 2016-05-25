@@ -12,7 +12,8 @@ if(form.input.value == "") alert(e);
 else {
 str_in = escape(form.input.value);
 for(i = 0; i < str_in.length; i++) {
-num_out += str_in.charCodeAt(i) - 23;
+num_out += str_in.charCodeAt(i);// - 23;
+num_out += ", ";
 }
 form.output.value = num_out;
 form.input.value = "";
@@ -25,7 +26,7 @@ if(form.output.value == "") alert(e)
 else {
 num_out = form.output.value;  
 for(i = 0; i < num_out.length; i += 2) {
-num_in = parseInt(num_out.substr(i,[2])) + 23;
+num_in = parseInt(num_out.substr(i,[2]));// + 23;
 num_in = unescape('%' + num_in.toString(16));
 str_out += num_in;
 }
