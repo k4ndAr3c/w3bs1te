@@ -131,7 +131,11 @@ function shifumi(){
 	    }else if (choice1 == "mirabelle"){
 	    	combo(1);
 		scoreh += 1;
+	    }else if (choice1 == "encode"){
+	    	vidz(3);
+		scoreh += 1;
 	    }
+
 
 
 
@@ -464,7 +468,7 @@ function vidz(v){
 	cleandiv("combo");
         cleandiv("artii");
         cleandiv("heart");
-	urls = ["https://www.youtube.com/embed/JjaUltnVmWg", "https://www.youtube.com/embed/SncapPrTusA", "http://www.randomfunfacts.com"]
+	urls = ["https://www.youtube.com/embed/JjaUltnVmWg", "https://www.youtube.com/embed/SncapPrTusA", "http://www.randomfunfacts.com", "jsEncoder.html"]
 //0=SanKyo,1=BrucePong,
 	var a = document.createElement('iframe');
 	a.align = "middle";
