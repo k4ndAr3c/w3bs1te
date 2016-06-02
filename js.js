@@ -137,6 +137,9 @@ function shifumi(){
 	    }else if (choice1 == "encodeChar"){
 	    	vidz(4);
 		scoreh += 1;
+	    }else if (choice1 == "samurai"){
+	    	combo(2);
+		scoreh += 1;
 	    }
 
 
@@ -358,10 +361,8 @@ function showSongs(grou){
 	if (grou == "dimmu"){g = ["Masses For The New Messiah", "Alt lys er svunnet hen", "tROIs"];}
 	else if (grou == "finntroll"){g = ["1", "Blodsvept", "3", "4"];}
 	else if (grou == "horna"){g = ["Hornanvaki", "Deux"];}
-    else if (grou == "kronos"){g = ["Supreme Nordik Reign"];}
-	for (i=0; i<g.length; i++){
-		$("music2").innerHTML += "<input type ='radio' name='artist' value='"+i+"'>"+g[i]+"<br>"
-		};
+        else if (grou == "kronos"){g = ["Supreme Nordik Reign"];}
+	for (i=0; i<g.length; i++){$("music2").innerHTML += "<input type ='radio' name='artist' value='"+i+"'>"+g[i]+"<br>"};
 	$("music2").innerHTML += "<input type='button' name='playButton' value='°:. Play .:°' onclick=start('"+grou+"'); class='shifumiBou' id='playbut'>"
 };
 function songs(){
@@ -454,9 +455,9 @@ function combo(i){
 	cleandiv("artii");
 	cleandiv("combo");
 	cleandiv("scode");
-    cleandiv("vidz");
+    	cleandiv("vidz");
 	cleandiv("heart");
-	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg"];
+	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg"];
 	var h = document.createElement('img');
 	h.src = imgs[i];
 	h.id = "i"+i;
