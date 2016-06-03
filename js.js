@@ -160,10 +160,7 @@ function shifumi(){
 };
 function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez ,.. test something !:. --</b></p>";};
 function artii(w){
-	cleandiv("scode");
-	cleandiv("combo");
-	cleandiv("vidz");
-	cleandiv("heart");
+	cleanAll();
 	var a = document.createElement('div');
 	req.open("GET", w+".artii", true);
 	req.setRequestHeader('Content-type', 'text/plain');
@@ -244,10 +241,7 @@ function deshuf(){
 	$("phrase").innerHTML = "Voici un petit jeu, have fun .!.";
 };
 function madnana(){
-	cleandiv("artii");
-	cleandiv("combo");
-	cleandiv("scode");
-        cleandiv("vidz");
+	cleanAll();
 	var h = document.createElement('img');
 	h.src="1M9/Heart_Beating.gif";
 	h.id = "heart";
@@ -264,11 +258,14 @@ function madnana(){
 	document.getElementById('madplayer').play();
 };
 function writeResult(res){
-	$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>"+res+"</b></p>";
+	$("sentence").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>"+res+"</b></p>";
+};
+function writeResult2(res){
+	$("sentence").innerHTML += "<p align='center' style='font-family:Courier; color:#1589FF'><b>"+res+"</b></p>";
 };
 function indice(){
-	if (scoreh == 3){writeResult("Clue/indice : some functions can be trigger by keywords / certaines fonctions se déclenchent par mots-clés")};
-	if (scoreh == 6){writeResult("Try : love      .or.      radio")};
+	if (scoreh == 3){writeResult2("Clue/indice : some functions can be trigger by keywords / certaines fonctions se déclenchent par mots-clés")};
+	if (scoreh == 6){writeResult2("Try : love      .or.      radio")};
 	if (scoreh == 14){quatorze()};
 };
 window.onload = function(){
@@ -333,11 +330,7 @@ function date(){
 //	$(d).innerHTML += "</select>"
 //};
 function music(){
-	cleandiv("combo");
-        cleandiv("artii");
-        cleandiv("scode");
-        cleandiv("heart");
-	cleandiv("radio");
+	cleanAll();
         var a = document.createElement('div');
         a.id="music";
 	a.setAttribute("align", "center");
@@ -406,10 +399,7 @@ function start(aut){
 	$("cplayer").innerHTML = "<button class='shifumiBou' onclick=document.getElementById('player').play()>PlAy</button><button class='shifumiBou' onclick=document.getElementById('player').pause()>PaUsE</button><button class='shifumiBou' onclick=document.getElementById('player').volume+=0.1>Vol Up</button><button class='shifumiBou' onclick=document.getElementById('player').volume-=0.1>Vol Down</button><p> Playing : "+aut;
 };
 function quatorze(){
-	cleandiv("combo");
-	cleandiv("artii");
-	cleandiv("heart");
-	cleandiv("vidz");
+	cleanAll();
         var a = document.createElement('div');
         req.open("GET", "js.js", true);
         req.setRequestHeader('Content-type', 'text/plain');
@@ -442,11 +432,7 @@ function cons(){
 };
 function radio(r){
     cleandiv("radio");
-    cleandiv("artii");
-    cleandiv("scode");
-    cleandiv("combo");
-    cleandiv("vidz");
-    cleandiv("heart");
+    cleanAll();
     var rads = ["http://www.radiosaintaffrique.com/en-direct", "http://www.radiolarzac.org:8000/radiolarzac.m3u", "http://www.ledjamradio.com"];
     var a = document.createElement('iframe');
     a.setAttribute("align", "middle");
@@ -458,11 +444,7 @@ function radio(r){
     document.body.appendChild(a);
 };
 function combo(i){
-	cleandiv("artii");
-	cleandiv("combo");
-	cleandiv("scode");
-    	cleandiv("vidz");
-	cleandiv("heart");
+	cleanAll();
 	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg"];
 	var h = document.createElement('img');
 	h.src = imgs[i];
@@ -474,12 +456,8 @@ function combo(i){
 	$("i"+i).style.webkitAnimationPlayState = "running";
 };
 function vidz(v){
-	cleandiv("scode");
-	cleandiv("vidz");
-	cleandiv("combo");
-        cleandiv("artii");
-        cleandiv("heart");
-	urls = ["https://www.youtube.com/embed/JjaUltnVmWg", "https://www.youtube.com/embed/SncapPrTusA", "http://www.randomfunfacts.com", "jsEncoder.html", "js_enc_dec.html"]
+	cleanAll();
+	urls = ["https://www.youtube.com/embed/JjaUltnVmWg", "https://www.youtube.com/embed/SncapPrTusA", "http://www.randomfunfacts.com", "jsEncoder.html", "js_enc_dec.html"];
 //0=SanKyo,1=BrucePong,
 	var a = document.createElement('iframe');
 	a.align = "middle";
@@ -491,13 +469,15 @@ function vidz(v){
 	document.body.appendChild(a)[0];
 };
 function citation(){
-        cleandiv("scode");
-        cleandiv("vidz");
-        cleandiv("combo");
-        cleandiv("artii");
-        cleandiv("heart");
-        cleandiv("citation");
-        var citS = ["'Les logiciels vendus par Microsoft sont pré-équipés de pare-feu, et sur les logiciels libres, il peut y avoir des pare-feu. Par exemple au ministère de la Culture nous avons Open-Office qui est un pare-feu.' ==> <b><i>Christine Albanel</i></b>, ancienne ministre de la Culture sous Sarkozy, aujourd'hui membre du conseil d'administration d'<font color=orange>Orange</font>. ", "L'information n'est pas la connaissance. La connaissance n'est pas la sagesse. La sagesse n'est pas la vérité. La vérité n'est pas la beauté. La beauté n'est pas l'amour. L'amour n'est pas la musique. La musique est la meilleure des choses. ==> <b>Frank Zappa</b>"]
+	cleanAll();
+        var citS = ["'Les logiciels vendus par Microsoft sont pré-équipés de pare-feu, et sur les logiciels libres, il peut y avoir des pare-feu. Par exemple au ministère de la Culture nous avons Open-Office qui est un pare-feu.' ==> <font color=red><i>Christine Albanel</i></font>, ancienne ministre de la Culture sous Sarkozy, aujourd'hui membre du conseil d'administration d'<font color=orange>Orange</font>. ", "L'information n'est pas la connaissance. La connaissance n'est pas la sagesse. La sagesse n'est pas la vérité. La vérité n'est pas la beauté. La beauté n'est pas l'amour. L'amour n'est pas la musique. La musique est la meilleure des choses. ==> <font color=red><i>Frank Zappa</i></font>"];
         var c = citS[Math.floor(Math.random() * citS.length)];
-        writeResult(c);
+	writeResult(c);
+};
+function cleanAll(tokeep){
+	$("sentence").innerHTML = "";
+	var divS = ["scode", "vidz", "combo", "artii", "heart"];
+	//var s = divsS.indexOf(tokeep);
+	//var divS = divsS.splice(s, 1);
+	for (i=0; i<divS.length; i++){cleandiv(divS[i])};
 };
