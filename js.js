@@ -143,6 +143,9 @@ function shifumi(){
 	    }else if (choice1 == "citation"){
 	    	citation();
 		scoreh += 1;
+	    }else if (choice1 == "test"){
+	    	fun();
+		scoreh += 1;
 	    }
 
 
