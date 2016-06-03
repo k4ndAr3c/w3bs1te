@@ -497,7 +497,7 @@ function citation(){
         cleandiv("artii");
         cleandiv("heart");
         cleandiv("citation");
-        var citS = ["'Les logiciels vendus par Microsoft sont pré-équipés de pare-feu, et sur les logiciels libres, il peut y avoir des pare-feu. Par exemple au ministère de la Culture nous avons Open-Office qui est un pare-feu.' ==> <b><i>Christine Albanel</i></b>, ancienne ministre de la Culture sous Sarkozy, aujourd'hui membre du conseil d'administration d'<font color=orange>Orange</font>. ", "L'information n'est pas la connaissance. La connaissance n'est pas la sagesse. La sagesse n'est pas la vérité. La vérité n'est pas la beauté. La beauté n'est pas l'amour. L'amour n'est pas la musique. La musique est la meilleure des choses.' ==> <i><b>Frank Zappa</i></b>"]
+        var citS = ["'Les logiciels vendus par Microsoft sont pré-équipés de pare-feu, et sur les logiciels libres, il peut y avoir des pare-feu. Par exemple au ministère de la Culture nous avons Open-Office qui est un pare-feu.' ==> <b><i>Christine Albanel</i></b>, ancienne ministre de la Culture sous Sarkozy, aujourd'hui membre du conseil d'administration d'<font color=orange>Orange</font>. ", "L'information n'est pas la connaissance. La connaissance n'est pas la sagesse. La sagesse n'est pas la vérité. La vérité n'est pas la beauté. La beauté n'est pas l'amour. L'amour n'est pas la musique. La musique est la meilleure des choses. ==> <b>Frank Zappa</b>"]
         var c = citS[Math.floor(Math.random() * citS.length)];
         writeResult(c);
 };
