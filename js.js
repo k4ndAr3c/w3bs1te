@@ -454,6 +454,19 @@ function combo(i){
 	document.body.appendChild(h);
 	$("i"+i).className= "loupe";
 	$("i"+i).style.webkitAnimationPlayState = "running";
+	$("i"+i).setAttribute("onclick", "replay()");
+};
+function replay(){
+	$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b> .: °RePLaYinG° :. </b></p>";
+	var img = document.getElementsByClassName("loupe");
+	a = img[0].id;
+	f = a[1];
+	combo(f);
+	//$(a).style.webkitAnimationPlayState = "paused";
+	//$(a).style.webkitAnimationPlayState = "running";
+	//var oimg = img[0];
+	//var nimg = oimg.cloneNode(true);
+	//oimg.parentNode.replaceChild(nimg, oimg);
 };
 function vidz(v){
 	cleanAll();
@@ -480,4 +493,5 @@ function cleanAll(tokeep){
 	//var s = divsS.indexOf(tokeep);
 	//var divS = divsS.splice(s, 1);
 	for (i=0; i<divS.length; i++){cleandiv(divS[i])};
+	for (j=0; j<10; j++){cleandiv("i"+j)};
 };
