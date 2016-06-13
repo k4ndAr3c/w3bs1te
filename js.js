@@ -149,6 +149,9 @@ function shifumi(){
 	    }else if (choice1 == "loulou"){
 	    	loulou();
 		scoreh += 1;
+	    }else if (choice1 == "dragon"){
+		combo(3);
+		scoreh += 1;
 	    }
 
 
@@ -449,7 +452,7 @@ function radio(r){
 };
 function combo(i){
 	cleanAll();
-	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg"];
+	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg", "1M9/fire-dragon-wallpaper.png"];
 	var h = document.createElement('img');
 	h.src = imgs[i];
 	h.id = "i"+i;
