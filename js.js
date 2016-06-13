@@ -146,6 +146,9 @@ function shifumi(){
 	    }else if (choice1 == "test"){
 	    	fun();
 		scoreh += 1;
+	    }else if (choice1 == "loulou"){
+	    	loulou();
+		scoreh += 1;
 	    }
 
 
@@ -490,9 +493,19 @@ function citation(){
 };
 function cleanAll(tokeep){
 	$("sentence").innerHTML = "";
-	var divS = ["scode", "vidz", "combo", "artii", "heart"];
+	var divS = ["scode", "vidz", "combo", "artii", "heart", "vplayer"];
 	//var s = divsS.indexOf(tokeep);
 	//var divS = divsS.splice(s, 1);
 	for (i=0; i<divS.length; i++){cleandiv(divS[i])};
 	for (j=0; j<10; j++){cleandiv("i"+j)};
+};
+function loulou(){
+     s = document.createElement("video");
+     s.id="vplayer";
+     s.type="video/mp4";
+     s.src = "1M9/m3BozenDo.m4v";
+     s.controls = true;
+     document.body.appendChild(s);                                                                                              
+     sleep("200");
+     document.getElementById('vplayer').play();
 };
