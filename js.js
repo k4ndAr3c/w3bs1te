@@ -204,6 +204,7 @@ function clairemaindor(){
 //    document.body.appendChild(a);
 };
 function pixel(){
+	scoreh += 1
 	$("pixel").onmouseover = bingo();
 };
 function bingo(){
@@ -336,6 +337,7 @@ function date(){
 //	$(d).innerHTML += "</select>"
 //};
 function music(){
+	cleandiv('radio');
 	cleanAll();
         var a = document.createElement('div');
         a.id="music";
