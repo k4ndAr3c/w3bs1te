@@ -151,7 +151,7 @@ function shifumi(){
 		scoreh += 1;
 	    }else if (choice1 == "pixel"){
                 bingo();
-
+	    }
 
 	}
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+" |:.</p>" ;
