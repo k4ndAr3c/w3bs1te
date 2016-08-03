@@ -199,10 +199,10 @@ function clairemaindor(){
 //    document.body.appendChild(a);
 };
 function pixel(){
-	scoreh += 1
 	$("pixel").onmouseover = bingo();
 };
 function bingo(){
+	scoreh += 1
 	$("titre").style.color = "red";
 	$("titre").setAttribute("align", "left");
 	$("titre").innerHTML = " Goodbye World! ";
