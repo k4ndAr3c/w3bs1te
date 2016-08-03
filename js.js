@@ -4,13 +4,14 @@ if (window.XMLHttpRequest){
 }else if (window.ActiveXtargetElementect){
 	req = new ActiveXtargetElementect("Microsoft.XMLHTTP");
 };
-var scorec = 0
-var scoreh = 0
 var $ = function(id){
 	return document.getElementById(id);
 };
+var scoreh = 0;
+var scorec = 0;
 function shifumi(){
 	cleandiv('cons');
+	deshuf();
 	var userChoice = prompt("Do you choose rock, paper or scissors ?");
 	var computerChoice = Math.random();
 	
@@ -25,10 +26,8 @@ function shifumi(){
 	
 	function compare(choice1, choice2){
 	    if (choice1 == choice2){
-		deshuf();
 	        return(">The result is a tie");
 	    }else if (choice1 == "rock"){
-		deshuf();
 	        if (choice2 == "scissors"){
 		    scoreh += 1;
 	            return("id=win>[+] YOU win");}
@@ -36,7 +35,6 @@ function shifumi(){
 		    scorec += 1;
 	            return("id=loose>[-] HE wins");}
 	    }else if (choice1 == "paper"){
-		deshuf();
 	        if (choice2 == "rock"){
 		    scoreh += 1;
 	            return("id=win>[+] YOU win");}
@@ -44,7 +42,6 @@ function shifumi(){
 		    scorec += 1;
 	            return("id=loose>[-] HE wins");}
 	    }else if (choice1 == "scissors"){
-		deshuf();
 	        if (choice2 == "paper"){
 		    scoreh += 1;
 	            return("id=win>[+] YOU win");}
@@ -155,13 +152,11 @@ function shifumi(){
 	    }
 
 
-
-
-
 	}
 	document.getElementById("results").innerHTML = "<p align=center "+compare(userChoice, computerChoice)+" |:.</p>" ;
 	$("score").innerHTML = "<font color=green>V= "+scoreh+"</font> / <font color=red>D= "+scorec+" </font>";
 	indice();
+	scoreCook();
 	return;
 };
 function vide(){$("phrase").innerHTML = "<p align='center' style='font-family:Courier; color:#1589FF'><b>-- Allez ,.. test something !:. --</b></p>";};
@@ -281,6 +276,7 @@ window.onload = function(){
 //	req.send();
 	date();
 	cons();
+	getScore();
 };
 //function date(){
 //	//req.overrideMimeType("text/xml");
@@ -294,7 +290,7 @@ window.onload = function(){
 //	req.send();
 //};
 function date(){
-	krucial = new Date;
+	krucial = new Date();
 	heure = krucial.getHours();
 	min = krucial.getMinutes();
 	sec = krucial.getSeconds();
@@ -349,7 +345,7 @@ function music(){
         r.id="musicc";
 	r.setAttribute("align", "center");
         document.body.appendChild(r);
-	$("musicc").innerHTML = "<select class='shifumiBou' name='metal' id='metal' size='1'><option value='-'>-</option><option value='dimmu'>Dimmu Borgir</option><option value='finntroll'>FinnTroll</option><option value='horna'>Horna</option><option value='kronos'>Kronos</option><option value='gronibard'>Gronibard</option></select>                              <select class='shifumiBou' name='rap' id='rap' size='1'><option value='-'>-</option><option value='hugo'>Hugo</option><option value='iam'>I Am</option><option value='assassin'>Assassin</option><option value='ntm'>NTM</option><option value='mcsolaar'>Solaar</option></select>                                     <select class='shifumiBou' name='dub' id='dub' size='1'><option value='-'>-</option><option value='panda'>Panda Dub</option><option value='kanka'>Kanka</option><option value='dubalyzer'>Dubalyzer</option><option value='perry'>Lee Perry</option><option value='kali'>Kali Live Dub</option></select>                                                     <select class='shifumiBou' name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='martino'>Pat Martino</option><option value='django'>Django Reinhardt</option><option value='joepass'>Joe Pass</option><option value='wes'>Wes Montgomery</option><option value='louis'>Louis Armstrong</option></select>                                       <select class='shifumiBou' name='elec' id='elec' size='1'><option value='-'>-</option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select>                                        <select class='shifumiBou' name='radios' id='radios' size='1'><option value='-'>-</option><option value='0'>St-Affrique</option><option value='1'>Larzac</option><option value='2'>LeDjam</option></select>"
+	$("musicc").innerHTML = "<select class='shifumiBou' name='metal' id='metal' size='1'><option value='-'>-</option><option value='dimmu'>Dimmu Borgir</option><option value='finntroll'>FinnTroll</option><option value='horna'>Horna</option><option value='kronos'>Kronos</option></select>                              <select class='shifumiBou' name='rap' id='rap' size='1'><option value='-'>-</option><option value='iam'>I Am</option><option value='assassin'>Assassin</option><option value='ntm'>NTM</option></select>                                     <select class='shifumiBou' name='dub' id='dub' size='1'><option value='-'>-</option><option value='panda'>Panda Dub</option><option value='kanka'>Kanka</option><option value='kaly'>Kaly Live Dub</option></select>                                                     <select class='shifumiBou' name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='martino'>Pat Martino</option><option value='django'>Django Reinhardt</option></select>                                       <select class='shifumiBou' name='elec' id='elec' size='1'><option value='-'>-</option><option value='krush'>DJ Krush</option></select>                                        <select class='shifumiBou' name='radios' id='radios' size='1'><option value='-'>-</option><option value='0'>St-Affrique</option><option value='1'>Larzac</option><option value='2'>LeDjam</option></select>"
 	sleep("200");
 	$("musique").onchange = function(){
         	var listValue = $("musique").value;
@@ -365,11 +361,19 @@ function music(){
 };
 function showSongs(grou){
 	$("music2").innerHTML = ""	
-	if (grou == "dimmu"){g = ["Masses For The New Messiah", "Alt lys er svunnet hen", "tROIs"];}
-	else if (grou == "finntroll"){g = ["1", "Blodsvept", "3", "4"];}
-	else if (grou == "horna"){g = ["Hornanvaki", "Deux"];}
+	if (grou == "dimmu"){g = ["Masses For The New Messiah", "Alt lys er svunnet hen"];}
+	else if (grou == "finntroll"){g = ["Blodsvept"];}
+	else if (grou == "horna"){g = ["Hornanvaki"];}
+	else if (grou == "kanka"){g = ["Melomania"];}
+	else if (grou == "kaly"){g = ["Jahsalfraid"];}
+	else if (grou == "assassin"){g = ["L'Odysée Suit Son Cours"];}
+	else if (grou == "panda"){g = ["Dub Music Is My Way Of Life"];}
         else if (grou == "kronos"){g = ["Supreme Nordik Reign"];}
-        else if (grou == "ntm"){g = ["Ma Benz :)"];}
+        else if (grou == "ntm"){g = ["Ma Benz :)", "Laisse Pas Trainer Ton Fils"];}
+        else if (grou == "django"){g = ["Daphné", "Nuages"];}
+        else if (grou == "krush"){g = ["Toshinori Kondo-Sun is Shining", "Ko-Ku"];}
+        else if (grou == "martino"){g = ["Do You Have A Name ?"];}
+        else if (grou == "iam"){g = ["Demain c'est loin"];}
 	for (i=0; i<g.length; i++){$("music2").innerHTML += "<input type ='radio' name='artist' value='"+i+"'>"+g[i]+"<br>"};
 	$("music2").innerHTML += "<input type='button' name='playButton' value='°:. Play .:°' onclick=start('"+grou+"'); class='shifumiBou' id='playbut'>"
 };
@@ -513,4 +517,17 @@ function loulou(){
      document.body.appendChild(s);                                                                                              
      sleep("200");
      document.getElementById('vplayer').play();
+};
+function scoreCook(){
+        var d = new Date();
+        d.setTime(d.getTime() + (1*3*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = "sc0r3S="+scoreh+"/"+scorec+";"+expires;
+};
+function getScore(){
+	co = document.cookie.split(';')[0];
+	scoreh = parseInt(co.split('=')[1].split("/")[0]);
+	scorec = parseInt(co.split('=')[1].split("/")[1]);
+	if (isNaN(scoreh) == true){scoreh =0};
+	if (isNaN(scorec) == true){scorec =0};
 };
