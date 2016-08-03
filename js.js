@@ -149,7 +149,8 @@ function shifumi(){
 	    }else if (choice1 == "dragon"){
 		combo(3);
 		scoreh += 1;
-	    }
+	    }else if (choice1 == "pixel"){
+                bingo();
 
 
 	}
