@@ -267,7 +267,7 @@ function writeResult2(res){
 };
 function indice(){
 	if (scoreh == 3){writeResult2("Clue/indice : some functions can be trigger by keywords / certaines fonctions se déclenchent par mots-clés")};
-	if (scoreh == 6){writeResult2("Try : love      .or.      radio")};
+	if (scoreh == 6){writeResult2("Try : love      .or.      music")};
 	if (scoreh == 14){quatorze()};
 };
 window.onload = function(){
