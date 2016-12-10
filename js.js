@@ -532,3 +532,10 @@ function getScore(){
 	if (isNaN(scoreh) == true){scoreh =0};
 	if (isNaN(scorec) == true){scorec =0};
 };
+function key(e) {
+	var code;
+	if (!e) var e = window.event;
+	if (e.keyCode) code = e.keyCode;
+	else if (e.which) code = e.which;
+	if (code == 55) window.location.href="administration/admin.php";
+};
