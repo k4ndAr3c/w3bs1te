@@ -1,3 +1,4 @@
+var citS = ["'Les logiciels vendus par Microsoft sont pré-équipés de pare-feu, et sur les logiciels libres, il peut y avoir des pare-feu. Par exemple au ministère de la Culture nous avons Open-Office qui est un pare-feu.' ==> <font color=red><i>Christine Albanel</i></font>, ancienne ministre de la Culture sous Sarkozy, aujourd'hui membre du conseil d'administration d'<font color=orange>Orange</font>. ", "L'information n'est pas la connaissance. La connaissance n'est pas la sagesse. La sagesse n'est pas la vérité. La vérité n'est pas la beauté. La beauté n'est pas l'amour. L'amour n'est pas la musique. La musique est la meilleure des choses. ==> <font color=red><i>Frank Zappa</i></font>", "Je crois au Dieu de Spinoza, qui se révèle dans l'ordre harmonieux de ce qui existe, et non en un dieu qui se préoccupe du sort et des actions des êtres humains. ==> <font color=red><i>Albert Einstein</i>", "Pour être un membre irréprochable parmi une communauté de moutons, il faut avant toute chose être soi-même un mouton. ==> <font color=red><i>Albert Einstein</i>", "Ceux qui aiment marcher en rangs sur une musique : ce ne peut être que par erreur qu'ils ont reçu un cerveau, une moelle épinière leur suffirait amplement. ==> <font color=red><i>Albert Einstein</i>", "Je ne peux pas imaginer un Dieu qui récompense et punit l'objet de sa création. Je ne peux pas me figurer un Dieu qui réglerait sa volonté sur l'expérience de la mienne. Je ne veux pas et je ne peux pas concevoir un être qui survivrait à la mort de son corps. Si de pareilles idées se développent en un esprit, je le juge faible, craintif et stupidement égoïste. ==> <font color=red><i>Albert Einstein</i>", "Cette conviction, liée à un sentiment profond d'une raison supérieure, se dévoilant dans le monde de l'expérience, traduit pour moi l'idée de Dieu. ==> <font color=red><i>Albert Einstein</i>", "J'affirme que le sentiment religieux cosmique est le motif le plus puissant et le plus noble de la recherche scientifique. ==> <font color=red><i>Albert Einstein</i>", "Je suis fasciné par le panthéisme de Spinoza, mais j'admire plus encore sa contribution à la pensée moderne, parce qu'il est le premier philosophe qui traite l'esprit et le corps comme unité, et non comme deux choses séparées. ==> <font color=red><i>Albert Einstein</i>", "Quiconque prétend s'ériger en juge de la vérité et du savoir s'expose à périr sous les éclats de rire des dieux puisque nous ignorons comment sont réellement les choses et que nous n'en connaissons que la représentation que nous en faisons. ==> <font color=red><i>Albert Einstein</i>", "Définissez-moi d’abord ce que vous entendez par Dieu et je vous dirai si j'y crois. ==> <font color=red><i>Albert Einstein</i>", "Le hasard, c'est Dieu qui se promène incognito. ==> <font color=red><i>Albert Einstein</i>", "Il n'existe que deux choses infinies, l'univers et la b&ecirctise humaine... mais pour l'univers, je n'ai pas de certitude absolue. ==> <font color=red><i>Albert Einstein</i>", "La science sans religion est boiteuse, la religion sans science est aveugle. ==> <font color=red><i>Albert Einstein</i>", "Il est plus difficile de désagréger un préjugé qu'un atome. ==> <font color=red><i>Albert Einstein</i>", "Ce qui m'intéresse vraiment c'est de savoir si Dieu avait un quelconque choix en créant le monde. ==> <font color=red><i>Albert Einstein</i>", "L'escalier de la science est l'échelle de Jacob, il ne s'achève qu'aux pieds de Dieu. ==> <font color=red><i>Albert Einstein</i>", "A force de lire des ouvrages de vulgarisation scientifique, j'ai bientôt eu la conviction que beaucoup d'histoires de la Bible ne pouvaient pas être vraies. La conséquence a été une véritable orgie fanatique de libre pensée accompagnée de l'impression que l'Etat trompe intentionnellement la jeunesse par des mensonges. C'était une impression écrasante. Cette expérience m'a amené à me méfier de toutes sortes d'autorité, à considérer avec scepticisme les convictions entretenues dans tout milieu social spécifique : une attitude qui ne m'a jamais quitté, même si par la suite, parce que j'ai mieux compris les mécanismes, elle a perdu de son ancienne violence. ==> <font color=red><i>Albert Einstein</i>"];
 var req = false;
 if (window.XMLHttpRequest){
 	req = new XMLHttpRequest();
@@ -63,7 +64,7 @@ function shifumi(){
 	    }else if (choice1 == "strange"){
 		strange();
 		scoreh += 1;
-	    }else if (choice1 == "maman"){
+	    }else if (choice1 == "m4m4n"){
 		clairemaindor();
 		scoreh += 1;
 	    }else if (choice1 == "hack"){
@@ -189,15 +190,7 @@ function strange(){
 	
 };
 function clairemaindor(){
-//    cleandiv("scode");
-//    cleandiv("artii");
-//    cleandiv("heart");
-//    cleandiv("vidz");                                                                                                      
-//    var a = document.createElement('iframe');
-//    a.id="claire";
     document.location="http://www.clairemaindor.fr";
-//    a.frameborder="0";
-//    document.body.appendChild(a);
 };
 function pixel(){
 	$("pixel").onmouseover = bingo();
@@ -497,9 +490,12 @@ function vidz(v){
 };
 function citation(){
 	cleanAll();
-        var citS = ["'Les logiciels vendus par Microsoft sont pré-équipés de pare-feu, et sur les logiciels libres, il peut y avoir des pare-feu. Par exemple au ministère de la Culture nous avons Open-Office qui est un pare-feu.' ==> <font color=red><i>Christine Albanel</i></font>, ancienne ministre de la Culture sous Sarkozy, aujourd'hui membre du conseil d'administration d'<font color=orange>Orange</font>. ", "L'information n'est pas la connaissance. La connaissance n'est pas la sagesse. La sagesse n'est pas la vérité. La vérité n'est pas la beauté. La beauté n'est pas l'amour. L'amour n'est pas la musique. La musique est la meilleure des choses. ==> <font color=red><i>Frank Zappa</i></font>"];
-        var c = citS[Math.floor(Math.random() * citS.length)];
-	writeResult(c);
+	if (citS.length == 0){
+		writeResult("No More Citations:.");}
+        else{
+		var c = citS[Math.floor(Math.random() * citS.length)];
+		var toprint = citS.splice(c,1);
+		writeResult(toprint);}
 };
 function cleanAll(tokeep){
 	$("sentence").innerHTML = "";
