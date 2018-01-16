@@ -126,6 +126,9 @@ function shifumi(){
 	    }else if (choice1 == "mira"){
 	    	combo(1);
 		scoreh += 1;
+	    }else if (choice1 == "minette"){
+	    	combo(4);
+		scoreh += 1;
 	    }else if (choice1 == "mirabelle"){
 	    	combo(1);
 		scoreh += 1;
@@ -452,7 +455,7 @@ function radio(r){
 };
 function combo(i){
 	cleanAll();
-	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg", "1M9/fire-dragon-wallpaper.png"];
+	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg", "1M9/fire-dragon-wallpaper.png", "1M9/minette.jpg"];
 	var h = document.createElement('img');
 	h.src = imgs[i];
 	h.id = "i"+i;
