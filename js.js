@@ -64,9 +64,6 @@ function shifumi(){
 	    }else if (choice1 == "strange"){
 		strange();
 		scoreh += 1;
-	    }else if (choice1 == "m4m4n"){
-		clairemaindor();
-		scoreh += 1;
 	    }else if (choice1 == "hack"){
 		writeResult(".:|  Find a piXel  |:.");
 		scoreh += 1;
@@ -116,9 +113,6 @@ function shifumi(){
 	    }else if (choice1 == 2){
 	    	radio("2");
 		writeResult("radio LeDjam");
-		scoreh += 1;
-	    }else if (choice1 == "combo"){
-	    	combo(0);
 		scoreh += 1;
 	    }else if (choice1 == "mimi"){
 	    	combo(1);
