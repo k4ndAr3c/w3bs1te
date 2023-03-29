@@ -186,9 +186,6 @@ function sleep(milliseconds) {
 function strange(){
 	
 };
-function clairemaindor(){
-    document.location="http://www.clairemaindor.fr";
-};
 function pixel(){
 	$("pixel").onmouseover = bingo();
 };
@@ -262,24 +259,10 @@ function indice(){
 	if (scoreh == 14){quatorze()};
 };
 window.onload = function(){
-//	var phpLogs = "http://www.clairemaindor.fr/rien.php";
-//	req.open("GET", phpLogs);
-//	req.send();
 	date();
 	cons();
 	getScore();
 };
-//function date(){
-//	//req.overrideMimeType("text/xml");
-//	req.open("GET", "http://www.clairemaindor.fr/date.php");
-//	req.onreadystatechange = function() {
-//		if(req.readyState == 4 && req.status == 200) {
-//			var res = req.responseText;
-//			$("date").innerHTML = res;
-//		};
-//	};
-//	req.send();
-//};
 function date(){
 	krucial = new Date();
 	heure = krucial.getHours();
@@ -423,16 +406,14 @@ function cleandiv(id){
 	document.body.removeChild(olddiv);
 }};
 function cons(){
-	var a = document.createElement('iframe');
+	var a = document.createElement('img');
 	a.align = "left";
 	a.width="0"; 
 	a.height="0";
 	a.id="cons";
 	a.src="http://www.clairemaindor.fr/rien.php";
-	a.frameborder="0";
 	document.body.appendChild(a);
-	//sleep(13500);
-	//cleandiv('cons');
+	cleandiv('cons');
 };
 function radio(r){
     cleandiv("radio");
