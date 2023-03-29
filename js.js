@@ -301,14 +301,14 @@ function music(){
         a.id="music";
 	a.setAttribute("align", "center");
         document.body.appendChild(a);
-	sleep("200");
+	sleep(200);
 	$("music").innerHTML = "<select name='musique' id='musique' class='shifumiBou' size='1'><option value='-'>-</option><option value='metal'>MeTaL</option><option value='rap'>RaP</option><option value='dub'>DuB</option><option value='jazz'>JaZz</option><option value='elec'>ElEcTrO</option><option value='radios'>RaDiOs</option></select>"
         var r = document.createElement('div');
         r.id="musicc";
 	r.setAttribute("align", "center");
         document.body.appendChild(r);
 	$("musicc").innerHTML = "<select class='shifumiBou' name='metal' id='metal' size='1'><option value='-'>-</option><option value='dimmu'>Dimmu Borgir</option><option value='finntroll'>FinnTroll</option><option value='horna'>Horna</option><option value='kronos'>Kronos</option></select>                              <select class='shifumiBou' name='rap' id='rap' size='1'><option value='-'>-</option><option value='iam'>I Am</option><option value='assassin'>Assassin</option><option value='ntm'>NTM</option></select>                                     <select class='shifumiBou' name='dub' id='dub' size='1'><option value='-'>-</option><option value='panda'>Panda Dub</option><option value='kanka'>Kanka</option><option value='kaly'>Kaly Live Dub</option></select>                                                     <select class='shifumiBou' name='jazz' id='jazz' size='1'><option value='-'>-</option><option value='martino'>Pat Martino</option><option value='django'>Django Reinhardt</option></select>                                       <select class='shifumiBou' name='elec' id='elec' size='1'><option value='-'>-</option><option value='krush'>DJ Krush</option></select>                                        <select class='shifumiBou' name='radios' id='radios' size='1'><option value='-'>-</option><option value='0'>St-Affrique</option><option value='1'>Larzac</option><option value='2'>LeDjam</option></select>"
-	sleep("200");
+	sleep(200);
 	$("musique").onchange = function(){
         	var listValue = $("musique").value;
 		$("metal").style.visibility = "hidden";
@@ -331,7 +331,7 @@ function showSongs(grou){
 	else if (grou == "assassin"){g = ["L'Odysée Suit Son Cours"];}
 	else if (grou == "panda"){g = ["Dub Music Is My Way Of Life"];}
         else if (grou == "kronos"){g = ["Supreme Nordik Reign"];}
-        else if (grou == "ntm"){g = ["Ma Benz :)", "Laisse Pas Trainer Ton Fils"];}
+        else if (grou == "ntm"){g = ["Ma Benz", "Laisse Pas Trainer Ton Fils"];}
         else if (grou == "django"){g = ["Daphné", "Nuages"];}
         else if (grou == "krush"){g = ["Toshinori Kondo-Sun is Shining", "Ko-Ku"];}
         else if (grou == "martino"){g = ["Do You Have A Name ?"];}
@@ -346,7 +346,7 @@ function songs(){
 	b.name="artiste";
 	b.setAttribute("align", "center");
 	document.body.appendChild(b);
-	sleep("200");
+	sleep(200);
 	var style = $("musique").value;
 	document.getElementById(style).onchange = function(){
 		var art = document.getElementById(style).value;
@@ -369,7 +369,7 @@ function start(aut){
 	cplayer = document.createElement("div");
         cplayer.id="cplayer";
 	document.body.appendChild(cplayer);
-	sleep("200");
+	sleep(200);
 	document.getElementById('player').play();
 	$("cplayer").innerHTML = "<button class='shifumiBou' onclick=document.getElementById('player').play()>PlAy</button><button class='shifumiBou' onclick=document.getElementById('player').pause()>PaUsE</button><button class='shifumiBou' onclick=document.getElementById('player').volume+=0.1>Vol Up</button><button class='shifumiBou' onclick=document.getElementById('player').volume-=0.1>Vol Down</button><p> Playing : "+aut;
 };
@@ -406,7 +406,7 @@ function cons(){
 function radio(r){
     cleandiv("radio");
     cleanAll();
-    var rads = ["https://www.radiosaintaffrique.com/en-direct", "https://stream.radiolarzac.org:8000/radiolarzac",  "https://ledjamradio.ice.infomaniak.ch/ledjamradio.mp3"];
+    var rads = ["https://www.radiosaintaffrique.com/en-direct", "http://stream.radiolarzac.org:8000/radiolarzac",  "https://ledjamradio.ice.infomaniak.ch/ledjamradio.mp3"];
     var a = document.createElement('iframe');
     a.setAttribute("align", "middle");
     a.width="640";
@@ -478,7 +478,7 @@ function loulou(){
      s.src = "1M9/m3BozenDo.m4v";
      s.controls = true;
      document.body.appendChild(s);                                                                                              
-     sleep("200");
+     sleep(200);
      document.getElementById('vplayer').play();
 };
 function scoreCook(){
