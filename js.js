@@ -222,7 +222,7 @@ function fun(){
 			$("results").innerHTML = "<p align='center' id='fun'>"+ funfact+"</p>";
 		}
 	}
-	req.open("GET", "http://www.randomfunfacts.com", true);
+	req.open("GET", "https://www.randomfunfacts.com", true);
 	//req.responseType = "document";
 	req.send();
 	req.onerror = function(){$("results").innerHTML = "<p align='center' style='font-family:Courier; color:#990012'><b> [-] Err0r in G3T .. </b></p>";}
@@ -376,7 +376,7 @@ function start(aut){
 	//document.forms.artiste.check.checked = false;
 	s.id="player";
 	s.type="audio/mp3";
-	s.src = "http://www.clairemaindor.fr/c1z/"+aut+songval+".mp3";
+	s.src = "https://www.clairemaindor.fr/c1z/"+aut+songval+".mp3";
 	document.body.appendChild(s);
 	cplayer = document.createElement("div");
         cplayer.id="cplayer";
@@ -411,7 +411,7 @@ function cons(){
 	a.width="0"; 
 	a.height="0";
 	a.id="cons";
-	a.src="http://www.clairemaindor.fr/rien.php";
+	a.src="https://www.clairemaindor.fr/rien.php";
 	document.body.appendChild(a);
 	cleandiv('cons');
 };
@@ -455,7 +455,7 @@ function replay(){
 };
 function vidz(v){
 	cleanAll();
-	urls = ["https://www.youtube.com/embed/JjaUltnVmWg", "https://www.youtube.com/embed/SncapPrTusA", "http://www.randomfunfacts.com", "jsEncoder.html", "js_enc_dec.html"];
+	urls = ["https://www.youtube.com/embed/JjaUltnVmWg", "https://www.youtube.com/embed/SncapPrTusA", "https://www.randomfunfacts.com", "jsEncoder.html", "js_enc_dec.html"];
 //0=SanKyo,1=BrucePong,
 	var a = document.createElement('iframe');
 	a.align = "middle";
