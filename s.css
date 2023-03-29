@@ -1,11 +1,17 @@
-body {
-  background-image: url("blackBG2.jpg");
+body, html {
   font-family: 'Ubuntu';
-  background-size: auto;
+  heigth: 100%;
   color:yellow;
 }
 h1 {
   color: green;
+}
+.bg {
+  background-image: url("blackBG2.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #win {
   color: green;

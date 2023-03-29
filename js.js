@@ -99,18 +99,18 @@ function shifumi(){
 	    }else if (choice1 == "musique"){
 	    	music();
 		scoreh += 1;
-	    }else if (choice1 == 0){
+	    }else if (choice1 == "0"){
 	    	radio("0");
 		writeResult("radio St-Aff");
 		scoreh += 1;
-	    }else if (choice1 == 1){
+	    }else if (choice1 == "1"){
 	    	radio("1");
 		writeResult("radio Larzac");
 		scoreh += 1;
 	    }else if (choice1 == "radio"){
 	    	radio(prompt("st-aff=0, larzac=1, ledjam=2, choose a radio."));
 		scoreh += 1;
-	    }else if (choice1 == 2){
+	    }else if (choice1 == "2"){
 	    	radio("2");
 		writeResult("radio LeDjam");
 		scoreh += 1;
@@ -175,16 +175,17 @@ function artii(w){
 	};
 	req.send();
 };
-function sleep(milliseconds) {
-	var start = new Date().getTime();
-	for (var i = 0; i < 1e7; i++) {
-		if ((new Date().getTime() - start) > milliseconds){
-			break;
-		}
-	}
-};
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+//function sleep(milliseconds) {
+//	var start = new Date().getTime();
+//	for (var i = 0; i < 1e7; i++) {
+//		if ((new Date().getTime() - start) > milliseconds){
+//			break;
+//		}
+//	}
+//};
 function strange(){
-	
+	return
 };
 function pixel(){
 	$("pixel").onmouseover = bingo();
@@ -290,22 +291,6 @@ function date(){
 	}
 	setTimeout("date()", 1000)
 };
-//function displayList(id){
-//	var listValue = $(id).value;
-//	$(listValue).style.visibility = "visible";
-//}
-//function createList(d,s){
-//	if (s == "metal"){g = ["DimmuBorgir", "Finntroll", "Horna", "Kronos", "Gronibard"];}
-//	else if (s == "rap"){g = ["Hugo", "IAm", "NTM", "Solaar"];}
-//	else if (s == "dub"){g = ["PandaDub", "Kanka", "LeePerry", "KaliLiveDub"];}
-//	else if (s == "jazz"){g = ["PatMartino", "DjangoReinhardt", "JoePass", "WesMontgomery", "LouisArmstrong"];}
-//	else if (s == "radios"){g = ["St-Affrique", "Larzac", "LeDjam"];}
-//	$(d).innerHTML = "<select class='shifumiBou' name='"+s+"' id='"+s+"' size='1'><option value='-'>-</option>"
-//	for (i=0; i<g.length; i++){
-//		$(d).innerHTML += "<option value='"+g[i]+"'>"+g[i]+"</option"
-//		};
-//	$(d).innerHTML += "</select>"
-//};
 function music(){
 	cleandiv('radio');
 	cleanAll();
@@ -418,7 +403,7 @@ function cons(){
 function radio(r){
     cleandiv("radio");
     cleanAll();
-    var rads = ["http://www.radiosaintaffrique.com/en-direct", "http://www.radiolarzac.org:8000/radiolarzac.m3u", "http://www.ledjamradio.com"];
+    var rads = ["http://www.radiosaintaffrique.com/en-direct", "http://stream.radiolarzac.org:8000/radiolarzac",  "https://ledjamradio.ice.infomaniak.ch/ledjamradio.mp3"];
     var a = document.createElement('iframe');
     a.setAttribute("align", "middle");
     a.width="640";
@@ -464,7 +449,7 @@ function vidz(v){
 	a.id="vidz";
 	a.src=urls[v];
 	a.frameborder="0";
-	document.body.appendChild(a)[0];
+	document.body.appendChild(a);
 };
 function citation(){
 	cleanAll();
