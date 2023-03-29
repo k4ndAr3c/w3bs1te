@@ -211,7 +211,7 @@ function shufPhrase(){
 	}
 	$("phrase").innerHTML = strhpr;
 };
-function fun(){
+/*function fun(){
 	//req.withCredentials = true;
 	//req.setRequestHeader('Content-type', 'text/html');
 	req.overrideMimeType("text/xml");
@@ -227,6 +227,17 @@ function fun(){
 	//req.responseType = "document";
 	req.send();
 	req.onerror = function(){$("results").innerHTML = "<p align='center' style='font-family:Courier; color:#990012'><b> [-] Err0r in G3T .. </b></p>";}
+};*/
+function fun(){
+  fetch('https://www.randomfunfacts.com', {
+      mode: 'no-cors',
+      method: 'GET',
+    }).then(r => r.text()).then(t => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(t, 'text/html');
+        const fact = doc.getElementsByTagName("i")[0].innerHTML;
+	$("results").innerHTML = "<p align='center' id='fun'>"+ fact +"</p>";
+    }).catch(error => { $("results").innerHTML = "<p align='center' style='font-family:Courier; color:#990012'><b> [-] Err0r in G3T .. </b></p>"; });
 };
 function deshuf(){
 	$("phrase").innerHTML = "Voici un petit jeu, have fun .!.";
@@ -415,7 +426,7 @@ function radio(r){
 };
 function combo(i){
 	cleanAll();
-	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg", "1M9/fire-dragon-wallpaper.png", "1M9/minette.jpg"];
+	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg", "1M9/dragon.png", "1M9/minette.jpg"];
 	var h = document.createElement('img');
 	h.src = imgs[i];
 	h.id = "i"+i;
