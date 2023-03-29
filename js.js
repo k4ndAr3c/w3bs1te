@@ -176,14 +176,6 @@ function artii(w){
 	req.send();
 };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-//function sleep(milliseconds) {
-//	var start = new Date().getTime();
-//	for (var i = 0; i < 1e7; i++) {
-//		if ((new Date().getTime() - start) > milliseconds){
-//			break;
-//		}
-//	}
-//};
 function strange(){
 	return
 };
@@ -426,7 +418,7 @@ function radio(r){
 };
 function combo(i){
 	cleanAll();
-	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg", "1M9/dragon.png", "1M9/minette.jpg"];
+	imgs = ["1M9/combo.jpg", "1M9/mimi.jpg", "1M9/samurai-small.jpg", "1M9/dragon.jpg", "1M9/minette.jpg"];
 	var h = document.createElement('img');
 	h.src = imgs[i];
 	h.id = "i"+i;
