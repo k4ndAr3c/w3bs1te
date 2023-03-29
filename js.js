@@ -403,7 +403,7 @@ function cons(){
 function radio(r){
     cleandiv("radio");
     cleanAll();
-    var rads = ["http://www.radiosaintaffrique.com/en-direct", "http://stream.radiolarzac.org:8000/radiolarzac",  "https://ledjamradio.ice.infomaniak.ch/ledjamradio.mp3"];
+    var rads = ["https://www.radiosaintaffrique.com/en-direct", "https://stream.radiolarzac.org:8000/radiolarzac",  "https://ledjamradio.ice.infomaniak.ch/ledjamradio.mp3"];
     var a = document.createElement('iframe');
     a.setAttribute("align", "middle");
     a.width="640";
